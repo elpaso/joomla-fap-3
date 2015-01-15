@@ -171,6 +171,16 @@ body.fap-small .slicknav_menu_wrapper .inputbox.search-query {
   font-size: 150%;
   width: 70%;
 }
+body.fap-small .fap-search button.button {
+  font-size: 150%;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+body.fap-small .column_left,
+body.fap-small .column_right {
+  float: none;
+  width: 100%;
+}
 /***********************************************************************
  * SlickNav responsive Menu
  *   Mobile Menu Core Style

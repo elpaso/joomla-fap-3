@@ -1433,13 +1433,11 @@ table {
 }
 
 
-/* mod login */
+/* com/mod login */
 #login-form fieldset.userdata {
     padding: 0;
     border: none;
 }
-
-
 
 .login-fields label {
     float: left;
@@ -1456,14 +1454,17 @@ table {
     padding: 0.25em;
 }
 
-#login-form fieldset.userdata .button {
+.userdata .button {
     margin-left: 0.5em;
 }
 
-#modlgn-username
-, #modlgn-passwd {
+.userdata .input-small {
     width: 190px;
 }
+
+#form-login-submit .controls {
+    text-align: right;
+ }
 
 /* mod stats  */
 dl.stats-module {
@@ -1572,6 +1573,11 @@ text-decoration:none
 .pull-right {
     float: right;
 }
+
+.pull-left {
+    float: left;
+}
+
 .span9 {
     width: 538px;
     float: left;

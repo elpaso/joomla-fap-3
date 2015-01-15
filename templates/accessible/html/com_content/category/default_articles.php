@@ -55,7 +55,7 @@ $listDirn   = $this->escape($this->state->get('list.direction'));
 <?php else : ?>
 
 <form action="<?php echo htmlspecialchars(JFactory::getURI()->toString()); ?>" method="post" id="adminForm">
-    <?php if ($this->params->get('show_headings') || $this->params->get('filter_field') != 'hide' || $this->params->get('show_pagination_limit')) :?>
+    <?php if ($this->params->get('filter_field') != 'hide' || $this->params->get('show_pagination_limit')) :?>
     <fieldset class="filters">
         <?php if ($this->params->get('filter_field') != 'hide') :?>
         <legend class="hidelabeltxt">
@@ -70,7 +70,7 @@ $listDirn   = $this->escape($this->state->get('list.direction'));
 
         <?php if ($this->params->get('show_pagination_limit')) : ?>
         <div class="display-limit">
-            <?php echo JText::_('JGLOBAL_DISPLAY_NUM'); ?>&#160;
+            <label class="limit-lbl" for="limit"><?php echo JText::_('JGLOBAL_DISPLAY_NUM'); ?>&#160;</label>
             <?php echo $this->pagination->getLimitBox(); ?>
         </div>
         <?php endif; ?>

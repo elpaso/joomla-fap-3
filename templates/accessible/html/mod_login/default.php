@@ -27,7 +27,7 @@ JHtml::_('bootstrap.tooltip');
                     <div class="input-prepend">
                         <span class="add-on">
                             <span class="icon-user hasTooltip" title="<?php echo JText::_('MOD_LOGIN_VALUE_USERNAME') ?>"></span>
-                            <label for="modlgn-username" class="element-invisible"><?php echo JText::_('MOD_LOGIN_VALUE_USERNAME'); ?></label>
+                            <label for="modlgn-username"><?php echo JText::_('MOD_LOGIN_VALUE_USERNAME'); ?></label>
                         </span>
                         <input id="modlgn-username" type="text" name="username" class="input-small" tabindex="0" size="18" title="<?php echo JText::_('MOD_LOGIN_VALUE_USERNAME') ?>" />
                     </div>
@@ -44,7 +44,7 @@ JHtml::_('bootstrap.tooltip');
                         <span class="add-on">
                             <span class="icon-lock hasTooltip" title="<?php echo JText::_('JGLOBAL_PASSWORD') ?>">
                             </span>
-                                <label for="modlgn-passwd" class="element-invisible"><?php echo JText::_('JGLOBAL_PASSWORD'); ?>
+                                <label for="modlgn-passwd"><?php echo JText::_('JGLOBAL_PASSWORD'); ?>
                             </label>
                         </span>
                         <input id="modlgn-passwd" type="password" name="password" class="input-small" tabindex="0" size="18" title="<?php echo JText::_('JGLOBAL_PASSWORD') ?>" />
@@ -63,13 +63,13 @@ JHtml::_('bootstrap.tooltip');
                         <span class="add-on">
                             <span class="icon-star hasTooltip" title="<?php echo JText::_('JGLOBAL_SECRETKEY'); ?>">
                             </span>
-                                <label for="modlgn-secretkey" class="element-invisible"><?php echo JText::_('JGLOBAL_SECRETKEY'); ?>
+                                <label for="modlgn-secretkey"><?php echo JText::_('JGLOBAL_SECRETKEY'); ?>
+                                <span class="hasTooltip" title="<?php echo JText::_('JGLOBAL_SECRETKEY_HELP'); ?>">
+                                    <span class="icon-help"></span>
+                                </span>
                             </label>
                         </span>
                         <input id="modlgn-secretkey" type="text" name="secretkey" class="input-small" tabindex="0" size="18" title="<?php echo JText::_('JGLOBAL_SECRETKEY') ?>" />
-                        <span class="btn width-auto hasTooltip" title="<?php echo JText::_('JGLOBAL_SECRETKEY_HELP'); ?>">
-                            <span class="icon-help"></span>
-                        </span>
                 </div>
                 <?php else: ?>
                     <label for="modlgn-secretkey"><?php echo JText::_('JGLOBAL_SECRETKEY') ?></label>

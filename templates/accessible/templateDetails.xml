@@ -2,8 +2,8 @@
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
 <extension version="3.1" type="template" client="site" method="upgrade">
     <name>accessible</name>
-    <version>3.9</version>
-    <creationDate>2014-12-10</creationDate>
+    <version>3.10</version>
+    <creationDate>2014-12-12</creationDate>
     <author>Alessandro Pasotti - ItOpen</author>
     <authorEmail>info@itopen.it</authorEmail>
     <authorUrl>http://www.itopen.it</authorUrl>
@@ -105,6 +105,7 @@
         <position>user4</position>
         <position>debug</position>
         <position>syndicate</position>
+        <position>topmost</position>
     </positions>
 
 </extension>

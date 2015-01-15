@@ -190,6 +190,11 @@ div.blog {
         width:30%
 }
 
+.column_left,
+.column_right {
+    width: 49%;
+}
+
 .item-separator {
     clear: both;
 }
