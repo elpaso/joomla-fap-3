@@ -95,19 +95,38 @@ div#main-3 {
     overflow: hidden;
   }
 
-div#accessibility-links {
-    text-align:right;
-  }
 
 div#accessibility-links {
+    text-align:right;
     float:right;
-    margin: 0.5em 0;
 }
+
 
 div#menu-top {
     width: 100%;
     margin-bottom: 1em;
-  }
+}
+
+
+.headroom--not-top div#menu-top{
+    position: fixed;
+    top: 0;
+    z-index: 99999;
+}
+
+.headroom--not-top div#menu-top-bg{
+    display: block;
+    position: fixed;
+    top: 0;
+    z-index: 99998;
+}
+
+div#menu-top-bg,
+.fap-small div#menu-top-bg {
+    display: none;
+    width: 100%;
+}
+
 
 div#banner .padding {
     padding:0;

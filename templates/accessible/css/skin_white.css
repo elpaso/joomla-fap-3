@@ -176,6 +176,11 @@ body.white div#menu-top .menu a {
   background-color: #002c74;
   color: #ffffff;
 }
+body.white div#menu-top-bg {
+  background-color: #002c74;
+  color: #ffffff;
+  box-shadow: 0 3px 10px 6px rgba(0, 0, 0, 0.3);
+}
 body.white div#logo a:focus,
 body.white div#logo a:active,
 body.white div#logo a:hover {
@@ -359,19 +364,20 @@ body.white .mceWrapper a:hover {
 }
 /****************************************
  accessibility links */
-body.white div#accessibility-links span.accessibility-icon button,
-body.white div#accessibility-links span.accessibility-icon {
+body.white .accessibility-img button,
+body.white .accessibility-img span.accessibility-icon {
   background-color: #002c74;
   color: #ffffff;
 }
-body.white div#accessibility-links span.accessibility-icon button:focus,
-body.white div#accessibility-links span.accessibility-icon button:hover {
+body.white span.accessibility-icon button:focus,
+body.white span.accessibility-icon button:hover {
   background-color: #0053da;
 }
-body.white div#accessibility-links span.accessibility-text {
+body.white span.accessibility-text {
   color: #000000;
 }
-body.white div#accessibility-links button {
+body.white .accessibility-fa button,
+body.white .accessibility-plain button {
   background-color: #ffffff;
   border: #cccccc;
   color: #000000;

@@ -8,6 +8,7 @@
 
 defined('_JEXEC') or die;
 
+
 $cparams = JComponentHelper::getParams ('com_media');
 ?>
 <div class="contact<?php echo $this->pageclass_sfx?>">
@@ -55,7 +56,11 @@ $cparams = JComponentHelper::getParams ('com_media');
 	<?php endif; ?>
 
 	<?php if ($this->contact->con_position && $this->params->get('show_position')) : ?>
-		<p class="contact-position"><?php echo $this->contact->con_position; ?></p>
+		<dl class="contact-position dl-horizontal">
+			<dd itemprop="jobTitle">
+				<?php echo $this->contact->con_position; ?>
+			</dd>
+		</dl>
 	<?php endif; ?>
 
 	<?php echo $this->loadTemplate('address'); ?>

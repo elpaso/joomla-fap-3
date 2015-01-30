@@ -30,6 +30,11 @@ class  plgSystemJFap extends JPlugin
         #$style_regexp = '@<span[^>]*>@is';
         #$style_replace = ''
 
+        // Old style tags B I
+        $tags_regexp = array('/<b>/', '/<\/b>/', '/<i>/', '/<\/i>/');
+        $tags_replace = array('<strong>', '</strong>', '<em>', '</em>');
+        $body = preg_replace( $tags_regexp, $tags_replace, $body);
+
         # J3 itemprop & required
         $j3_forms_regexp = array(
                 '/itemprop="[^"]+"/is',

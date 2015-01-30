@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+          type="module"
+          version="1.6.0"
+          client="site"
+          method="upgrade">
+    <name>Accessibility Links</name>
+    <author>Alessandro Pasotti - ItOpen</author>
+    <creationDate>2014-12-12</creationDate>
+    <copyright>Copyright (C) 2014 ItOpen. All rights reserved.</copyright>
+    <license>http://www.fsf.org/licensing/licenses/agpl-3.0.htm GNU/Affero</license>
+    <authorEmail>info@itopen.it</authorEmail>
+    <authorUrl>www.itopen.org</authorUrl>
+    <version>3.10</version>
+    <description>MOD_ACCESSIBILITY_LINKS_DESC</description>
+	<files>
+	<filename module="mod_accessibility_links">mod_accessibility_links.php</filename>
+    <filename>index.html</filename>
+    <folder>tmpl</folder>
+    <folder>language</folder>
+	</files>
+  <config>
+      <fields name="params">
+      <fieldset name="basic"
+			label="MOD_ACCESSIBILITY_LINKS_BASIC"
+      >
+        <field name="liquid_variant" type="radio" default="yes" class="btn-group" label="MOD_ACCESSIBILITY_DISPLAY_LIQUID">
+            <option value="no">JNO</option>
+            <option value="yes">JYES</option>
+        </field>
+        <field name="accessibility_icons" type="radio" default="yes" class="btn-group" label="MOD_ACCESSIBILITY_DISPLAY_ICONS">
+            <option value="no">JNO</option>
+            <option value="yes">JYES</option>
+        </field>
+        <field name="accessibility_icons_use_fa" type="radio" default="yes" class="btn-group" label="MOD_ACCESSIBILITY_ICONS_USE_FA" description="MOD_ACCESSIBILITY_ICONS_USE_FA_DESC">
+            <option value="no">JNO</option>
+            <option value="yes">JYES</option>
+        </field>
+        <field name="short_labels" type="radio" default="no" class="btn-group" label="MOD_ACCESSIBILITY_SHORT_LABELS" description="MOD_ACCESSIBILITY_SHORT_LABELS_DESC">
+            <option value="no">JNO</option>
+            <option value="yes">JYES</option>
+        </field>
+        <field name="tools_label" type="text" default="" class="btn-group" label="MOD_ACCESSIBILITY_TOOLS_LABEL" description="MOD_ACCESSIBILITY_TOOLS_LABEL_DESC">
+        </field>
+    </fieldset>
+	</fields>
+    </config>
+</extension>

@@ -31,7 +31,6 @@ if(!defined('__FAP_TEMPLATE_UTILS__')) {
         }
         return '';
     }
-
     function fap_load_less( $tpl ){
         return false;
     }

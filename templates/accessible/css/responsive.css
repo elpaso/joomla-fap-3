@@ -48,6 +48,7 @@
 .fap-small .hidden-small {
   display: none;
 }
+.fap-xs .hidden-phone,
 .fap-xs .hidden-xs {
   display: none;
 }
@@ -153,7 +154,8 @@ body.fap-small #wrapper > [role=complementary] {
 body.fap-small .slicknav_menu {
   display: block;
 }
-body.fap-small div#accessibility-links span.accessibility-text {
+body.fap-small span.accessibility-text,
+body.fap-small span.accessibility-label {
   left: -9999px;
   position: absolute;
 }
@@ -188,7 +190,8 @@ body.fap-small .column_right {
 /* Move accessibility links to slick menu */
 body.fap-small div#accessibility-links {
   position: fixed;
-  top: 0;
+  top: 5px;
+  left: 5px;
   z-index: 1002;
 }
 body.fap-small div#accessibility-links button {
@@ -197,8 +200,11 @@ body.fap-small div#accessibility-links button {
   /*
     border-radius: 4px;
 */
-  margin: 0.3em;
+  margin: 0 0.25em;
   border: none;
+}
+body.fap-small div#accessibility-links.accessibility-plain button {
+  margin: 0 0.25em;
 }
 body.fap-small div#accessibility-links form {
   margin: 0;
