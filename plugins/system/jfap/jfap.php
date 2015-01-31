@@ -31,8 +31,8 @@ class  plgSystemJFap extends JPlugin
         #$style_replace = ''
 
         // Old style tags B I
-        $tags_regexp = array('/<b>/', '/<\/b>/', '/<i>/', '/<\/i>/');
-        $tags_replace = array('<strong>', '</strong>', '<em>', '</em>');
+        $tags_regexp = array('/<b(\s+[^>]*)?>/', '/<\/b>/', '/<i(\s+[^>]*)?>/', '/<\/i>/');
+        $tags_replace = array('<strong\1>', '</strong>', '<em\1>', '</em>');
         $body = preg_replace( $tags_regexp, $tags_replace, $body);
 
         # J3 itemprop & required
