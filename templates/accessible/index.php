@@ -229,6 +229,12 @@ if ($this->params->get('responsive_enabled') == 'yes') { ?>
                         <jdoc:include type="modules" name="inset" style="accessible" />
                     </div>
                     <?php } ?>
+                    <?php if($this->countModules(get_accessible_pos('left'))) { ?>
+                        <jdoc:include type="modules" name="left" style="accessible" />
+                        <?php if($new_positions){ ?>
+                        <jdoc:include type="modules" name="position-8" style="accessible" />
+                        <?php } ?>
+                    <?php } ?>
                 </div>
             </div>
         <?php } ?>
@@ -271,7 +277,7 @@ if ($this->params->get('responsive_enabled') == 'yes') { ?>
             <?php } ?>
             <jdoc:include type="component" style="accessible"/>
             <?php if ($this->countModules(get_accessible_pos('user1 or user2'))) { ?>
-            <div id="user12">
+            <div id="user12" class="clearfix">
                 <?php if ($this->countModules(get_accessible_pos('user1 or user2')) && ! $this->countModules(get_accessible_pos('user1 and user2'))) { ?>
                 <div class="userfull">
                     <jdoc:include type="modules" name="user1" style="accessible" />
@@ -279,10 +285,10 @@ if ($this->params->get('responsive_enabled') == 'yes') { ?>
                 </div>
                 <?php } ?>
                 <?php if ($this->countModules(get_accessible_pos('user1 and user2'))) { ?>
-                <div class="column_left">
+                <div class="column_left pull-left">
                     <jdoc:include type="modules" name="user1" style="accessible" />
                 </div>
-                <div class="column_right">
+                <div class="column_right pull-right">
                     <jdoc:include type="modules" name="user2" style="accessible" />
                 </div>
                 <?php } ?>
