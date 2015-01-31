@@ -6,12 +6,12 @@
           method="upgrade">
     <name>Accessibility Links</name>
     <author>Alessandro Pasotti - ItOpen</author>
-    <creationDate>2014-12-12</creationDate>
+    <creationDate>2015-01-31</creationDate>
     <copyright>Copyright (C) 2014 ItOpen. All rights reserved.</copyright>
     <license>http://www.fsf.org/licensing/licenses/agpl-3.0.htm GNU/Affero</license>
     <authorEmail>info@itopen.it</authorEmail>
     <authorUrl>www.itopen.org</authorUrl>
-    <version>3.10</version>
+    <version>3.11</version>
     <description>MOD_ACCESSIBILITY_LINKS_DESC</description>
 	<files>
 	<filename module="mod_accessibility_links">mod_accessibility_links.php</filename>
