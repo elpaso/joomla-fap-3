@@ -229,11 +229,8 @@ if ($this->params->get('responsive_enabled') == 'yes') { ?>
                         <jdoc:include type="modules" name="inset" style="accessible" />
                     </div>
                     <?php } ?>
-                    <?php if($this->countModules(get_accessible_pos('left'))) { ?>
-                        <jdoc:include type="modules" name="left" style="accessible" />
-                        <?php if($new_positions){ ?>
+                    <?php if($new_positions){ ?>
                         <jdoc:include type="modules" name="position-8" style="accessible" />
-                        <?php } ?>
                     <?php } ?>
                 </div>
             </div>
