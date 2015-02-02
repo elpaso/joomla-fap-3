@@ -127,9 +127,23 @@ function fap_skin_set(skin){
 function fap_accessible_menu(menu_selector){
     var $menu = jQuery(menu_selector);
     $menu.find('a:not(:first)').attr('tabindex', '-1');
-    jQuery('#menu-top li.level-0 > a:last').addClass('last');
-    jQuery('#menu-top li.level-0 a:first').addClass('first');
+    $menu.find('li.level-0 > a:last').addClass('last');
+    $menu.find('li.level-0 a:first').addClass('first');
     $menu.find('li.level-0.deeper').attr('aria-haspopup', 'true').attr('aria-expanded', 'false');
+
+    // Touch events
+    $menu.find('li.level-0.deeper > a').on({
+        'touchstart' : function(e){
+            $this = jQuery(this),
+            e.preventDefault();
+            if($this.is(":focus")){
+                $this.blur();
+            } else {
+                $this.focus();
+            }
+        }
+    });
+
     $menu.find('a').on("keydown", function(e) {
         var $menu = jQuery(this);
         var keyCode = e.charCode || e.which || e.keyCode,
@@ -223,30 +237,38 @@ function fap_accessible_menu(menu_selector){
         }
     }).on('blur', function(e) {
         var $this = jQuery(this);
-        // Do nothing
+        // Close all menus if none has focus, probably should be a top-menu event
+        $this.closest('[role="menubar"]').find('[aria-expanded="true"]').attr('aria-expanded', 'false');
     }).on('focus', function(e) {
         var $this = jQuery(this);
-        // Close all menus
-        if(!$this.closest('[aria-expanded="true"]').length){
-            $this.closest('[role="menubar"]').find('[aria-expanded="true"]').attr('aria-expanded', 'false');
-        }
         if ($this.closest('[aria-haspopup]').attr('aria-haspopup') == "true") {
             $this.closest('[aria-haspopup]').attr('aria-expanded', 'true');
         }
     });
-
-    $menu.on('blur', function(e) {
-        var $this = jQuery(this);
-        // Close all menus if none has focus, probably should be a top-menu event
-        $this.find('[aria-expanded="true"]').attr('aria-expanded', 'false');
-    });
 }
 
+
+// Decorate external links
+function fap_decorate_external_links(){
+    jQuery('a.external-link').filter(function(k, e){
+        $e = jQuery(e);
+        if(!$e.children().length){
+            var title = 'Il collegamento si apre in un sito esterno.';
+            $e.prepend('<em class="icon-out-2"></em>');
+            if ( $e.attr('title') ){
+                $e.attr('title', $e.attr('title') +  ' - ' + title);
+            } else {
+                $e.attr('title', title);
+            }
+        }
+    });
+}
 
 jQuery(function($){
     fap_prefs_load();
     fap_accessible_menu( '#menu-top' );
     fap_accessible_menu( '[role=complementary] .nav.menu' );
+    fap_decorate_external_links();
 
     $( window ).unload(function() {
         fap_prefs_save();

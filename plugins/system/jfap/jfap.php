@@ -74,9 +74,26 @@ class  plgSystemJFap extends JPlugin
 						$img_replace
 						),
 					$body);
+
+
         # onkeypress
         # Already in the accessibility links
         #$body = preg_replace('|onclick="(.*?)"|mus', 'onclick="\1" onkeypress="\1"', $body);
+
+        // Set external link class
+        if (preg_match_all( "/<a.*?href=[\"']http:\/\/[^\"']+[\"'].*?>/" , $body , $matches)){
+            $string = array();
+            $replace = array();
+            foreach($matches[0] as $m){
+                $string[] = $m;
+                if(! strstr ( $m, 'class=') ){
+                    $replace[] = substr($m, 0, -1) . ' class="external-link">';
+                } else {
+                    $replace[] = preg_replace("/class=[\"'](.*?)[\"']/", 'class="\1 external-link"', $m);
+                }
+            }
+            $body = str_replace($string, $replace, $body);
+        }
         JResponse::setBody($body);
     }
 
