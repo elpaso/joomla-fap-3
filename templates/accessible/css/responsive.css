@@ -136,18 +136,27 @@
  *
  * fap-small is a configurable alias, default to fap-xs
  */
-body.fap-small .cols-2 .column-2,
-body.fap-small .cols-2 .column-1,
+body.fap-small .column-1,
+body.fap-small .column-2,
+body.fap-small .column-3,
 body.fap-small div#main-2,
 body.fap-small div#main-3,
 body.fap-small #logo img {
   width: 100%;
+  left: 0;
 }
 body.fap-small div#wrapper {
   padding: 0;
 }
-body.fap-small #menu-top,
-body.fap-small #wrapper > [role=complementary] {
+body.fap-small #sidebar-left,
+body.fap-small #sidebar-right {
+  left: 0 !important;
+  width: 100%;
+}
+body.fap-small #sidebar-left .padding {
+  padding-left: 0.5em;
+}
+body.fap-small #menu-top {
   left: -9999px;
   position: absolute;
 }

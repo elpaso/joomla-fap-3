@@ -2,14 +2,14 @@
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
 <extension version="3.1" type="template" client="site" method="upgrade">
     <name>accessible</name>
-    <version>3.11</version>
-    <creationDate>2015-02-01</creationDate>
+    <version>3.12</version>
+    <creationDate>2015-02-04</creationDate>
     <author>Alessandro Pasotti - ItOpen</author>
     <authorEmail>info@itopen.it</authorEmail>
     <authorUrl>http://www.itopen.it</authorUrl>
-    <copyright>Copyright 2013 - itopen.it</copyright>
+    <copyright>Copyright 2013-2015 - itopen.it</copyright>
     <license>AGPL: Affero GPL</license>
-    <description>Accessible Template XHTML Strict</description>
+    <description>Accessible Template for Joomla! FAP</description>
     <files>
         <filename>templateDetails.xml</filename>
         <folder>js</folder>

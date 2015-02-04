@@ -3,7 +3,7 @@
 * Joomla! FAP 3
 * @package   JoomlaFAP
 * @author    Alessandro Pasotti
-* @copyright    Copyright (C) 2012-2014 Alessandro Pasotti http://www.itopen.it
+* @copyright    Copyright (C) 2012-2015 Alessandro Pasotti http://www.itopen.it
 * @license      GNU/AGPL
 *
 *
@@ -50,8 +50,18 @@ div#sidebar-left {
 /*
     margin-top: 1em;
 */
+    position: relative;
+    left: -54%;
   }
 
+.has-left-column div#sidebar-left {
+    position: relative;
+    left: -77%;
+}
+
+.has-left-column.has-right-column div#sidebar-left {
+    left: -54%;
+}
 
 div#sidebar-left div.padding {
     padding-left: 0;
@@ -86,6 +96,7 @@ div#main-2 {
     float:left;
     overflow:hidden;
     width:77%;
+    position: relative;
   }
 
 
@@ -93,8 +104,15 @@ div#main-3 {
     float: left;
     width: 54%;
     overflow: hidden;
+    position: relative;
+    left: 23%;
   }
 
+.has-left-column div#main-2,
+.has-left-column div#main-3 {
+    position: relative;
+    left: 23%;
+}
 
 div#accessibility-links {
     text-align:right;

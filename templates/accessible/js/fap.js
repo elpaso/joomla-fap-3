@@ -253,7 +253,8 @@ function fap_decorate_external_links(){
     jQuery('a.external-link').filter(function(k, e){
         $e = jQuery(e);
         if(!$e.children().length){
-            var title = 'Il collegamento si apre in un sito esterno.';
+            // Set in index.php HEAD
+            var title = fap_text_external_link;
             $e.prepend('<em class="icon-out-2"></em>');
             if ( $e.attr('title') ){
                 $e.attr('title', $e.attr('title') +  ' - ' + title);

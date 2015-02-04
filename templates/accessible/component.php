@@ -4,7 +4,7 @@
 * Joomla! FAP 3
 * @package   JoomlaFAP
 * @author    Alessandro Pasotti
-* @copyright    Copyright (C) 2014 Alessandro Pasotti http://www.itopen.it
+* @copyright    Copyright (C) 2014-2015 Alessandro Pasotti http://www.itopen.it
 * @license      GNU/AGPL
 
     This program is free software: you can redistribute it and/or modify

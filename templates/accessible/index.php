@@ -52,15 +52,23 @@ if ($this->params->get('logo_file'))
     $logo = null;
 }
 
-$cols = 1;
-if ($this->countModules(get_accessible_pos('right'))
-    && JRequest::getCmd('layout') != 'form'
-    && JRequest::getCmd('task') != 'edit') {
-    $cols += 1;
-}
+// Define wich columns are to be shown
 
-if($this->countModules(get_accessible_pos('left or inset or user4'))) {
-    $cols += 1;
+$has_left_column = $this->countModules(get_accessible_pos('left or inset or user4'));
+$has_right_column = $this->countModules(get_accessible_pos('right'))
+        && JRequest::getCmd('layout') != 'form'
+        && JRequest::getCmd('layout') != 'edit';
+
+$cols = 1;
+$main_column_class = '';
+
+if( $has_left_column ) {
+    $cols ++;
+    $main_column_class .= ' has-left-column';
+}
+if( $has_right_column ) {
+    $cols ++;
+    $main_column_class .= ' has-right-column';
 }
 
 /* Accessibility session storage */
@@ -141,6 +149,7 @@ echo '<?xml version="1.0" encoding="'. $this->_charset .'"?' .'>';
     <?php if($this->params->get('default_font_size')){ ?>
     var  fs_default =  "<?php echo $this->params->get('default_font_size'); ?>";
     <?php } ?>
+    var fap_text_external_link = "<?php echo JText::_('FAP_OPEN_IN_EXTERNAL_SITE') ?>";
 /* ]]> */
 </script>
 <?php fap_extra_styles( $this, $session); ?>
@@ -157,7 +166,7 @@ if ($this->params->get('responsive_enabled') == 'yes') { ?>
 <?php fap_extra_fonts( $this); ?>
 </head>
 <body class="<?php echo ($fap_skin_current ? $fap_skin_current : $this->params->get('default_skin').($this->params->get('default_variant') ? ' ' . $this->params->get('default_variant') : ''));?>" id="main">
-    <div id="wrapper">
+    <div id="wrapper" class="<?php echo $main_column_class; ?>">
         <div role="banner">
             <div class="hidden">
                 <a id="up"></a>
@@ -211,43 +220,6 @@ if ($this->params->get('responsive_enabled') == 'yes') { ?>
             </div>
             <?php } ?>
         </div><?php // ./banner end ?>
-        <?php if ($this->countModules(get_accessible_pos('left or inset or user4')) || ($this->countModules(get_accessible_pos('right'))  && JRequest::getCmd('layout') != 'form'
-    && JRequest::getCmd('task') != 'edit')) { ?>
-        <div role="complementary">
-            <?php if ($this->countModules(get_accessible_pos('left or inset or user4'))) { ?>
-            <div id="sidebar-left">
-                <div class="padding">
-                    <a id="main-menu" class="hidden"></a>
-                    <?php if ($this->countModules(get_accessible_pos('user4'))) { ?>
-                    <div id="searchbox">
-                        <jdoc:include type="modules" name="user4" style="accessible" />
-                    </div>
-                    <?php } ?>
-                    <jdoc:include type="modules" name="left" style="accessible" />
-                    <?php if ($this->countModules(get_accessible_pos('inset'))) { ?>
-                    <div class="inset">
-                        <jdoc:include type="modules" name="inset" style="accessible" />
-                    </div>
-                    <?php } ?>
-                    <?php if($new_positions){ ?>
-                        <jdoc:include type="modules" name="position-8" style="accessible" />
-                    <?php } ?>
-                </div>
-            </div>
-        <?php } ?>
-            <?php if ($this->countModules(get_accessible_pos('right'))  && JRequest::getCmd('layout') != 'form'
-        && JRequest::getCmd('task') != 'edit') { ?>
-            <div id="sidebar-right">
-                <div class="padding">
-                    <jdoc:include type="modules" name="right" style="accessible" />
-                    <?php if($new_positions){ ?>
-                    <jdoc:include type="modules" name="position-7" style="accessible" />
-                    <?php } ?>
-                </div>
-            </div>
-            <?php } ?>
-        </div><?php // ./complementary end ?>
-         <?php } ?>
         <div role="main" id="main-<?php print $cols ;?>" class="maincomponent">
           <?php if ($this->countModules(get_accessible_pos('pathway'))){ ?>
           <div id="center-module">
@@ -299,6 +271,41 @@ if ($this->params->get('responsive_enabled') == 'yes') { ?>
             <?php } ?>
             </div>
         </div>
+        <?php if ( $has_left_column || $has_right_column ) { ?>
+        <div role="complementary">
+            <?php if ( $has_left_column ) { ?>
+            <div id="sidebar-left">
+                <div class="padding">
+                    <a id="main-menu" class="hidden"></a>
+                    <?php if ($this->countModules(get_accessible_pos('user4'))) { ?>
+                    <div id="searchbox">
+                        <jdoc:include type="modules" name="user4" style="accessible" />
+                    </div>
+                    <?php } ?>
+                    <jdoc:include type="modules" name="left" style="accessible" />
+                    <?php if ($this->countModules(get_accessible_pos('inset'))) { ?>
+                    <div class="inset">
+                        <jdoc:include type="modules" name="inset" style="accessible" />
+                    </div>
+                    <?php } ?>
+                    <?php if($new_positions){ ?>
+                        <jdoc:include type="modules" name="position-8" style="accessible" />
+                    <?php } ?>
+                </div>
+            </div>
+        <?php } ?>
+        <?php if ( $has_right_column ) { ?>
+            <div id="sidebar-right">
+                <div class="padding">
+                    <jdoc:include type="modules" name="right" style="accessible" />
+                    <?php if($new_positions){ ?>
+                    <jdoc:include type="modules" name="position-7" style="accessible" />
+                    <?php } ?>
+                </div>
+            </div>
+            <?php } ?>
+        </div><?php // ./complementary end ?>
+         <?php } ?>
         <div id="footer">
             <div class="padding">
                 <?php if ($this->countModules(get_accessible_pos('footer'))) { ?>
