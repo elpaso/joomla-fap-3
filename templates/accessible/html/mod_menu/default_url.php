@@ -52,11 +52,11 @@ $item->flink = str_replace('amp;amp;', 'amp;', preg_replace('/&/', '&amp;', $ite
 switch ($item->browserNav) :
     default:
     case 0:
-?><a role="menuitem"<?php if(@$titles[$item->id]){ echo ' title="' . htmlentities($titles[$item->id]) . '"'; } ?><?php if(@$accesskeys[$item->id]){ echo " accesskey='{$accesskeys[$item->id]}'"; } ?> <?php echo $class; ?>href="<?php echo $item->flink; ?>" <?php echo $title; ?>><?php echo $linktype; ?></a><?php
+?><a role="menuitem"<?php if(@$titles[$item->id]){ echo ' title="' . htmlentities($titles[$item->id]) . '"'; } ?><?php if(@$accesskeys[$item->id]){ echo " accesskey='{$accesskeys[$item->id]}'"; } ?> <?php echo $class; ?> href="<?php echo $item->flink; ?>" <?php echo $title; ?>><?php echo $linktype; ?></a><?php
         break;
     case 2:// window.open
     case 1:
         // _blank
-?><a role="menuitem"<?php if(@$titles[$item->id]){ echo ' title="' . htmlentities($titles[$item->id]) . '"';} ?><?php if(@$accesskeys[$item->id]){ echo " accesskey='{$accesskeys[$item->id]}'"; } ?> <?php echo $class; ?>href="<?php echo $item->flink; ?>" target="_blank" <?php echo $title; ?>><?php echo $linktype; ?></a><?php
+?><a role="menuitem"<?php if(@$titles[$item->id]){ echo ' title="' . htmlentities($titles[$item->id]) . '"';} ?><?php if(@$accesskeys[$item->id]){ echo " accesskey='{$accesskeys[$item->id]}'"; } ?> <?php echo $class; ?> href="<?php echo $item->flink; ?>" target="_blank" <?php echo $title; ?>><?php echo $linktype; ?></a><?php
         break;
 endswitch;

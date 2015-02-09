@@ -1120,13 +1120,14 @@ div#accessibility-links  {
 .accessibility-label {
     margin: 0 0.25em;
 }
-.accessibility-fa button,
+.accessibility-im button,
 .accessibility-img button {
     border: 0 none !important;
 }
 
-.accessibility-fa button .fa {
+.accessibility-im button em {
      font-size: 130%;
+     vertical-align: middle;
 }
 
 div#accessibility-links button span {

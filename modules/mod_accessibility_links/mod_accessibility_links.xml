@@ -6,19 +6,31 @@
           method="upgrade">
     <name>Accessibility Links</name>
     <author>Alessandro Pasotti - ItOpen</author>
-    <creationDate>2015-02-04</creationDate>
+    <creationDate>2015-02-07</creationDate>
     <copyright>Copyright (C) 2014 ItOpen. All rights reserved.</copyright>
     <license>http://www.fsf.org/licensing/licenses/agpl-3.0.htm GNU/Affero</license>
     <authorEmail>info@itopen.it</authorEmail>
     <authorUrl>www.itopen.org</authorUrl>
-    <version>3.12</version>
+    <version>3.13</version>
     <description>MOD_ACCESSIBILITY_LINKS_DESC</description>
+
+    <updateservers>
+        <server type="extension" priority="1" name="Server Aggiornamenti ItOpen">http://www.itopen.it/joomla-updater?o=mod_accessibility_links</server>
+    </updateservers>
+
 	<files>
-	<filename module="mod_accessibility_links">mod_accessibility_links.php</filename>
-    <filename>index.html</filename>
-    <folder>tmpl</folder>
-    <folder>language</folder>
+        <filename module="mod_accessibility_links">mod_accessibility_links.php</filename>
+        <filename>index.html</filename>
+        <folder>tmpl</folder>
+        <folder>language</folder>
 	</files>
+
+    <media destination="mod_accessibility_links" folder="media">
+        <filename>index.html</filename>
+        <filename>style.css</filename>
+        <folder>fonts</folder>
+    </media>
+
   <config>
       <fields name="params">
       <fieldset name="basic"
@@ -32,7 +44,7 @@
             <option value="no">JNO</option>
             <option value="yes">JYES</option>
         </field>
-        <field name="accessibility_icons_use_fa" type="radio" default="yes" class="btn-group" label="MOD_ACCESSIBILITY_ICONS_USE_FA" description="MOD_ACCESSIBILITY_ICONS_USE_FA_DESC">
+        <field name="accessibility_icons_use_icomoon" type="radio" default="yes" class="btn-group" label="MOD_ACCESSIBILITY_ICONS_USE_ICOMOON" description="MOD_ACCESSIBILITY_ICONS_USE_ICOMOON_DESC">
             <option value="no">JNO</option>
             <option value="yes">JYES</option>
         </field>

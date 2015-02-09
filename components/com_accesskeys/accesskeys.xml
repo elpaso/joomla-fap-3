@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="3.0" method="upgrade">
     <name>AccessKeys</name>
-    <creationDate>2015-02-04</creationDate>
+    <creationDate>2015-02-07</creationDate>
     <author>Alessandro Pasotti - ItOpen</author>
     <authorUrl>http://www.itopen.it</authorUrl>
     <copyright>Copyright 2013 ItOpen</copyright>
     <license>GNU/AGPL</license>
-    <version>3.12</version>
+    <version>3.13</version>
     <description>
         <![CDATA[
                  Componente per le accesskey
                  ]]>
     </description>
+
+
+    <updateservers>
+        <server type="extension" priority="1" name="Server Aggiornamenti ItOpen">http://www.itopen.it/joomla-updater?o=com_accesskeys</server>
+    </updateservers>
 
     <installfile>install.accesskeys.php</installfile>
     <install> <!-- Runs on install -->

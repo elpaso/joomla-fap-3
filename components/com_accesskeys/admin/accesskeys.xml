@@ -13,6 +13,11 @@
                  ]]>
     </description>
 
+
+    <updateservers>
+        <server type="extension" priority="1" name="Server Aggiornamenti ItOpen">http://www.itopen.it/joomla-updater?o=com_accesskeys</server>
+    </updateservers>
+
     <installfile>install.accesskeys.php</installfile>
     <install> <!-- Runs on install -->
         <sql>

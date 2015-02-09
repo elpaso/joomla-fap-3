@@ -80,9 +80,8 @@ class  plgSystemJFap extends JPlugin
         # onkeypress
         # Already in the accessibility links
         #$body = preg_replace('|onclick="(.*?)"|mus', 'onclick="\1" onkeypress="\1"', $body);
-
         // Set external link class
-        if (preg_match_all( "/<a.*?href=[\"']http:\/\/[^\"']+[\"'].*?>/" , $body , $matches)){
+        if (preg_match_all( "/<a[^>]*?href=[\"']http:\/\/[^\"']+[\"'][^>]*>/" , $body , $matches)){
             $string = array();
             $replace = array();
             foreach($matches[0] as $m){

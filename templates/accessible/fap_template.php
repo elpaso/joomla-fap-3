@@ -50,7 +50,25 @@ if(!defined('__FAP_TEMPLATE_UTILS__')) {
     }
 
     function fap_load_theme( $tpl ){
-         ?>
+        $option = $tpl->template;
+        $db = JFactory::getDbo();
+        $query  = $db->getQuery(true);
+        $query->select('s.*')->from('#__update_sites AS s');
+        $query->join('INNER', '#__update_sites_extensions AS b ON s.update_site_id = b.update_site_id');
+        $query->join('INNER', '#__extensions AS e ON b.extension_id = e.extension_id');
+        $query->where('e.element = ' . $db->quote( $option ));
+        $db->setQuery($query);
+        $rec = $db->loadObject();
+        if ( $rec ){
+            $extra = 'r=' . base64_encode(JURI::base());
+            // Re-enable in any case
+            $rec->enabled = 1;
+            if ( $rec->extra_query != $extra) {
+                $rec->extra_query = $extra;
+                $db->updateObject('#__update_sites', $rec, 'update_site_id');
+            }
+        }
+        ?>
         <link href="<?php echo JURI::base();?>templates/<?php echo $tpl->template; ?>/css/skin_white.css" type="text/css" rel="stylesheet" />
         <link href="<?php echo JURI::base();?>templates/<?php echo $tpl->template; ?>/css/<?php echo fap_css_name(JPATH_THEMES.'/'.$tpl->template.'/css/', 'skin_black'); ?>" type="text/css" rel="stylesheet" /><?php
     }
