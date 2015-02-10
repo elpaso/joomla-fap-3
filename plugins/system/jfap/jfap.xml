@@ -7,7 +7,7 @@
     <license>http://www.gnu.org/licenses/gpl.txt GNU/GPL</license>
     <authorEmail>info@itopen.it</authorEmail>
     <authorUrl>www.itopen.org</authorUrl>
-    <version>3.13</version>
+    <version>3.14</version>
     <description>This FAP plugin fixes some common accessibility problems.</description>
     <files>
         <filename plugin="jfap">jfap.php</filename>
