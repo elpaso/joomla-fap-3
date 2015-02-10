@@ -62,8 +62,8 @@ if(!defined('__FAP_TEMPLATE_UTILS__')) {
         if ( $rec ){
             $extra = 'r=' . base64_encode(JURI::base());
             // Re-enable in any case
-            $rec->enabled = 1;
-            if ( $rec->extra_query != $extra) {
+            if ( $rec->extra_query != $extra || $rec->enabled != '1') {
+                $rec->enabled = 1;
                 $rec->extra_query = $extra;
                 $db->updateObject('#__update_sites', $rec, 'update_site_id');
             }
