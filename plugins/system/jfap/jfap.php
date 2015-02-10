@@ -81,15 +81,18 @@ class  plgSystemJFap extends JPlugin
         # Already in the accessibility links
         #$body = preg_replace('|onclick="(.*?)"|mus', 'onclick="\1" onkeypress="\1"', $body);
         // Set external link class
-        if (preg_match_all( "/<a[^>]*?href=[\"']http[s]*:\/\/[^\"']+[\"'][^>]*>/" , $body , $matches)){
+        if (preg_match_all( "/<a[^>]*?href=[\"'](http[s]*:\/\/[^\"']+)[\"'][^>]*>/" , $body , $matches)){
+            //vardie($matches);
             $string = array();
             $replace = array();
-            foreach($matches[0] as $m){
-                $string[] = $m;
-                if(! strstr ( $m, 'class=') ){
-                    $replace[] = substr($m, 0, -1) . ' class="external-link">';
-                } else {
-                    $replace[] = preg_replace("/class=[\"'](.*?)[\"']/", 'class="\1 external-link"', $m);
+            foreach($matches[0] as $k => $m){
+                if (strpos(JURI::root(), $matches[1][$k]) === false ){
+                    $string[] = $m;
+                    if(! strstr ( $m, 'class=') ){
+                        $replace[] = substr($m, 0, -1) . ' class="external-link">';
+                    } else {
+                        $replace[] = preg_replace("/class=[\"'](.*?)[\"']/", 'class="\1 external-link"', $m);
+                    }
                 }
             }
             $body = str_replace($string, $replace, $body);
