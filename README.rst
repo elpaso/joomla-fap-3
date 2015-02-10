@@ -45,9 +45,8 @@ Valerio Sichi (vales)
 
 LICENZA
 -------
-Affero GPL V.3
-http://www.gnu.org/licenses/agpl-3.0.txt
-http://www.fsf.org/licensing/licenses/agpl-3.0.html
+GPL V.3
+http://www.gnu.org/licenses/gpl.txt
 
 
 DEPOSITO CODICE

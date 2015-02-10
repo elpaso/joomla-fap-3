@@ -8,7 +8,7 @@
 *
 * @copyright 2014 ItOpen http://www.itopen.it
 * @author    Alessandro Pasotti
-* @licence   GNU/AGPL v. 3
+* @licence   GNU/GPL v. 3
 *
 * From Bootstrap:
 *

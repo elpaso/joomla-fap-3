@@ -3,7 +3,7 @@
 * @version		$Id:$
 * @package		Plg_jFap
 * @copyright	Copyright (C) 2011-2014 ItOpen. All rights reserved.
-* @licence      GNU/AGPL
+* @licence      GNU/GPL
 */
 
 // no direct access
