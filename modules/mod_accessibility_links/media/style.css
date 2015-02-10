@@ -1,12 +1,12 @@
 @font-face {
-    font-family: 'icomoon_fap';
-    src: url('fonts/icomoon_fap.eot');
-    src:url('fonts/icomoon_fap.eot') format('embedded-opentype'),
-        url('fonts/icomoon_fap.woff') format('woff'),
-        url('fonts/icomoon_fap.ttf') format('truetype'),
-        url('fonts/icomoon.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'icomoon_fap';
+	src:url('fonts/icomoon_fap.eot?4i3c3s');
+	src:url('fonts/icomoon_fap.eot?#iefix4i3c3s') format('embedded-opentype'),
+		url('fonts/icomoon_fap.woff?4i3c3s') format('woff'),
+		url('fonts/icomoon_fap.ttf?4i3c3s') format('truetype'),
+		url('fonts/icomoon_fap.svg?4i3c3s#icomoon_fap') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
 [class^="icon_fap-"], [class*=" icon_fap-"] {
@@ -27,8 +27,24 @@
 	content: "\e965";
 }
 
+.icon_fap-zoom-in:before {
+	content: "\e987";
+}
+
+.icon_fap-zoom-out:before {
+	content: "\e988";
+}
+
 .icon_fap-contrast:before {
 	content: "\e9d5";
+}
+
+.icon_fap-plus:before {
+	content: "\ea0a";
+}
+
+.icon_fap-minus:before {
+	content: "\ea0b";
 }
 
 .icon_fap-tab:before {
