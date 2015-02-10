@@ -1134,15 +1134,14 @@ div#accessibility-links button span {
     display: none;
 }
 
-div#accessibility-links.accessibility-img .accessibility-icon {
-    display: inline-block;
+.accessibility-img .accessibility-icon {
     height: 17px;
     margin: 0 0 0 2px;
     padding: 1px;
     width: 17px;
 }
 
-div#accessibility-links.accessibility-img button {
+.accessibility-img button {
     border: 0 none;
     font-size: 10px;
     height: 17px;

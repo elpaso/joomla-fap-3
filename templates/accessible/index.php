@@ -129,6 +129,7 @@ echo '<?xml version="1.0" encoding="'. $this->_charset .'"?' .'>';
 <head>
 <meta name="language" content="<?php echo $this->language; ?>" />
 <jdoc:include type="head" />
+<meta name="viewport" content="<?php echo $this->params->get('viewport_string', 'width=device-width, initial-scale=1'); ?>"/>
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/system.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/general.css" type="text/css" />
 <?php if ( ! fap_load_less($this) ) {

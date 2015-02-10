@@ -462,3 +462,8 @@ body.black.fap-small .slicknav_menu_wrapper .fap-search {
 body.black.fap-small .slicknav_menu_wrapper .fap-search form {
   background-color: #002c81;
 }
+body.fap-small div#accessibility-links .accessibility-icon {
+  background: transparent;
+  width: inherit;
+  margin: 3px;
+}
