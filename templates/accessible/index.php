@@ -154,7 +154,6 @@ echo '<?xml version="1.0" encoding="'. $this->_charset .'"?' .'>';
 /* ]]> */
 </script>
 <?php fap_extra_styles( $this, $session); ?>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <script type="text/javascript" src="<?php echo JURI::base();?>templates/<?php echo $this->template;?>/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="<?php echo JURI::base();?>templates/<?php echo $this->template;?>/js/fap.js"></script>
 <?php // Responsive
