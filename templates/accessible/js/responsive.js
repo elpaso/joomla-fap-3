@@ -6,7 +6,7 @@
 * This file is part of
 * Joomla! FAP
 *
-* @copyright 2014 ItOpen http://www.itopen.it
+* @copyright 2014-2015 ItOpen http://www.itopen.it
 * @author    Alessandro Pasotti
 * @licence   GNU/GPL v. 3
 *
@@ -72,7 +72,6 @@ jQuery(function($){
     }
 
     $(window).bind('changedBreakpoint', function(event, lastBp, currentBp, expanding){
-        //console.log('changedBreakpoint ' +  lastBp + ' to ' + currentBp + (expanding ? ' expanding' : ' schrinking'));
         if ( currentBp >=  SLICK_HIDE_BREAKPOINT  && expanding ) {
             // Remove fap-small alias class
             $('body').removeClass('fap-small');

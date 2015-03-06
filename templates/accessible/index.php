@@ -31,6 +31,7 @@ define ('LESS_COLORS', 'colors_Green.less');
 require_once JPATH_THEMES.'/'.$this->template.'/fap_template.php';
 
 JHtml::_('behavior.framework', true);
+JHtml::_('jquery.framework');
 
 if($this->params->get('new_positions') == 'yes'){
     $new_positions = true;
