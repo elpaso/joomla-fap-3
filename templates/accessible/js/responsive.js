@@ -53,7 +53,16 @@ jQuery(function($){
     $('#menu-top').slicknav({
         prependTo: '.slicknav_menu_wrapper',
         closedSymbol: '<i class="icon-arrow-right"></i>',
-        openedSymbol: '<i class="icon-arrow-down"></i>'
+        openedSymbol: '<i class="icon-arrow-down"></i>',
+        // Fix for high menus...
+        afterOpen: function(trigger){
+            var nav = jQuery('.slicknav_nav');
+            var menu = jQuery('.slicknav_menu');
+            var paddings = nav.position().top + parseInt(menu.css('padding-bottom'));
+            if ( paddings + nav.height() > $(window).height()){
+                nav.height(jQuery(window).height() - paddings);
+            }
+        }
     });
     // Remove AK
     $('.slicknav_menu_wrapper a[accesskey]').each(function(k, e){

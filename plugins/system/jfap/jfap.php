@@ -36,6 +36,12 @@ class  plgSystemJFap extends JPlugin
         $tags_replace = array('<strong\1>', '</strong>', '<em\1>', '</em>');
         $body = preg_replace( $tags_regexp, $tags_replace, $body);
 
+        $j3_voting_crap_regexp = array(
+            '/<meta itemprop=.*?\/>/',
+            '/<span class="content_vote">(.*?)<\/span>/is'
+        );
+        $body = preg_replace( $j3_voting_crap_regexp, array('', '<div>\1</div>'), $body);
+
         # J3 itemprop & required
         $j3_forms_regexp = array(
                 '/itemprop="[^"]+"/is',
@@ -97,6 +103,9 @@ class  plgSystemJFap extends JPlugin
             }
             $body = str_replace($string, $replace, $body);
         }
+
+        // Fix ampersand
+        $body = preg_replace("/&(?!(?:apos|quot|[gl]t|amp);|#)/", '&amp;', $body);
         JResponse::setBody($body);
     }
 

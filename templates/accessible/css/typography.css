@@ -1003,6 +1003,7 @@ div#menu-top .menu > li > ul {
     width: auto;
     z-index: 900;
     border-top: none;
+    opacity: 0;
 }
 
 div#menu-top ul.menu ul li {
@@ -1022,9 +1023,15 @@ div#menu-top .menu li.parent:hover > ul,
 div#menu-top .menu li.parent[aria-expanded="true"] > ul,
 div#menu-top .menu li.parent a:focus +  ul {
     left: inherit;
+    opacity: 1;
 /*
     display: block;
 */
+}
+
+.transitions div#menu-top .menu li.parent:hover > ul
+{
+    transition: opacity 0.5s;
 }
 
 div#menu-top .menu li ul li.parent ul {
@@ -1470,6 +1477,9 @@ table {
     display: none;
 }
 
+.readmore {
+    margin-top: 1em;
+}
 
 /* com/mod login */
 #login-form fieldset.userdata {
@@ -1503,6 +1513,10 @@ table {
 #form-login-submit .controls {
     text-align: right;
  }
+
+.btn-group {
+    display: inline-block;
+}
 
 /* mod stats  */
 dl.stats-module {

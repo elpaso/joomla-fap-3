@@ -286,6 +286,8 @@ body.fap-small a.slicknav_btn {
 }
 .slicknav_nav {
   clear: both;
+  overflow-y: auto !important;
+  /* for scroll on high menus */
 }
 .slicknav_nav ul,
 .slicknav_nav li {
@@ -466,4 +468,15 @@ body.fap-small div#accessibility-links .accessibility-icon {
   background: transparent;
   width: inherit;
   margin: 3px;
+}
+body.fap-small img.img-responsive {
+  width: 100%;
+}
+/***********************************************************************
+ * Disable transitions for menus
+ */
+body.fap-small.white.transitions a:hover,
+body.fap-small.white.transitions a:focus,
+body.fap-small.white.transitions a:active {
+  transition: none;
 }

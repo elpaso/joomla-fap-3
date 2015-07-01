@@ -50,6 +50,11 @@ body.white a:active {
   color: #ffffff;
   text-decoration: underline;
 }
+body.white.transitions a:hover,
+body.white.transitions a:focus,
+body.white.transitions a:active {
+  transition: all 0.25s;
+}
 /* J3 form override */
 body.white a.chzn-single:hover {
   color: inherit;
@@ -59,6 +64,10 @@ body.white a:focus,
 body.white a:active {
   background-color: #002c74;
   color: #ffffff;
+}
+body.white.transitions a:focus,
+body.white.transitions a:active {
+  transition: all 0.2s;
 }
 body.white h1,
 body.white h2,
@@ -76,6 +85,11 @@ body.white h2 a:hover,
 body.white h3 a:hover {
   color: #ff0055;
   background-color: #ffffff;
+}
+body.white.transitions h1 a:hover,
+body.white.transitions h2 a:hover,
+body.white.transitions h3 a:hover {
+  transition: all 0.5s;
 }
 body.white h1.item-title,
 body.white h2.item-title,
