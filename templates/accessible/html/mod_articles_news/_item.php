@@ -34,5 +34,7 @@ $item_heading = $params->get('item_heading', 'h4');
 <?php echo $item->introtext; ?>
 
 <?php if (isset($item->link) && $item->readmore != 0 && $params->get('readmore')) : ?>
-	<?php echo '<a class="readmore" href="' . $item->link . '">' . $item->linkText . '</a>'; ?>
+    <a href="<?php echo $item->link; ?>" title="<?php echo JText::_('COM_CONTENT_READ_MORE') . ' ' . htmlspecialchars($item->title); ?>">
+    <?php echo JText::_('COM_CONTENT_READ_MORE') . ' ' . JHtml::_('string.truncate', ($item->title), $params->get('readmore_limit')); ?>
+    </a>
 <?php endif; ?>

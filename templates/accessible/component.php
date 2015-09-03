@@ -23,8 +23,14 @@
 
 
 defined( '_JEXEC' ) or die( 'Restricted access' );
+define ('LESS_IS_MORE', '1');
+#define ('LESS_COLORS', 'colors_BlueBeige.less');
 
 JHtml::_('behavior.framework', true);
+JHtml::_('jquery.framework');
+
+/* include FAP template functions */
+require_once JPATH_THEMES.'/'.$this->template.'/fap_template.php';
 
 
 if($this->params->get('new_positions') == 'yes'){
@@ -97,53 +103,27 @@ if($fap_font_size_request = JRequest::getVar('fap_font_size')){
     $session->set('fap_font_size', $font_size);
 }
 
-
-
+// End configuration, starts output
+// xml prolog
+echo '<?xml version="1.0" encoding="'. $this->_charset .'"?' .'>';
 ?>
-<!DOCTYPE html
-     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN"
+  "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
+<head>
 <meta name="language" content="<?php echo $this->language; ?>" />
+<meta name="viewport" content="<?php echo $this->params->get('viewport_string', 'width=device-width, initial-scale=1'); ?>"/>
 <jdoc:include type="head" />
-
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/system.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/general.css" type="text/css" />
-<?php if (file_exists(JPATH_THEMES.'/'.$this->template.'/css/skin_white.less') && !defined('LESS_IS_MORE')) { ?>
-<!-- set options before less.js script -->
-<script>
-  less = {
-    env: "development",
-    logLevel: 2,
-    async: false,
-    fileAsync: false,
-    poll: 1000,
-    functions: {},
-    dumpLineNumbers: "comments",
-    relativeUrls: false,
-    globalVars: {
-      colors_definitions: '"<?php echo ( $this->params->get('override_theme') && file_exists(JPATH_THEMES.'/'.$this->template.'/css/'. $this->params->get('override_theme').'.css') ? 'colors_' . str_replace('_theme', '', $this->params->get('override_theme')) . '.less' : 'colors_Default.less' ) ?>"'
-    }
-  };
-</script>
-<link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/skin_white.less" type="text/css" rel="stylesheet/less" />
-<link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/skin_black.less" type="text/css" rel="stylesheet/less" />
-<script type="text/javascript" src="<?php echo JURI::base();?>templates/<?php echo $this->template;?>/js/less-1.7.5.min.js"></script>
-<?php } else {
-    /* loads the default skin or the override theme if set */
-    if ($this->params->get('override_theme') && file_exists(JPATH_THEMES.'/'.$this->template.'/css/'. $this->params->get('override_theme').'.css')) { ?>
-    <link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/<?php echo $this->params->get('override_theme').'.css' ?>" rel="stylesheet" type="text/css" />
-<?php } else { ?>
-    <link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/skin_white.css" type="text/css" rel="stylesheet" />
-<?php } ?>
-<link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/skin_black.css" type="text/css" rel="stylesheet" />
-<?php } ?>
-<link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/template_css.css" rel="stylesheet" type="text/css" />
+<?php if ( ! fap_load_less($this) ) {
+    fap_load_theme( $this );
+} ?>
+<link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/<?php echo fap_css_name(JPATH_THEMES.'/'.$this->template.'/css/', 'template_css'); ?>" rel="stylesheet" type="text/css" />
 <?php
     /* loads the additional custom theme if set */
-    if ($this->params->get('custom_theme') && file_exists(JPATH_THEMES.'/'.$this->template.'/css/'. $this->params->get('custom_theme').'.css')) { ?>
-    <link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/<?php echo $this->params->get('custom_theme').'.css' ?>" rel="stylesheet" type="text/css" />
+    if ($this->params->get('custom_theme') && $css_name = fap_css_name(JPATH_THEMES.'/'.$this->template.'/css/', $this->params->get('custom_theme'))) { ?>
+    <link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/<?php echo $css_name; ?>" rel="stylesheet" type="text/css" />
 <?php } ?>
 <script type="text/javascript">
 /* <![CDATA[ */
@@ -152,59 +132,17 @@ if($fap_font_size_request = JRequest::getVar('fap_font_size')){
     var skin_current = "<?php echo $fap_skin_current; ?>";
     <?php } ?>
     <?php if($this->params->get('default_font_size')){ ?>
-    var  fs_default =  "<?php echo $this->params->get('default_font_size'); ?>";
+    var fs_default =  "<?php echo $this->params->get('default_font_size'); ?>";
     <?php } ?>
+    var fap_text_external_link = "<?php echo JText::_('FAP_OPEN_IN_EXTERNAL_SITE') ?>";
 /* ]]> */
 </script>
-<?php // set font_size & skin from session
-if($fap_font_size = $session->get('fap_font_size')
-    || $this->params->get('custom_css')
-    || $this->params->get('base_font')
-    || $this->params->get('article_header_font')
-    )
-    {
-        ?>
-<style type="text/css">
-    <?php  if ($fap_font_size = $session->get('fap_font_size')) { ?>
-    body#main {
-        font-size: <?php echo $fap_font_size ?>%;
-    }
-    <?php
-    } // end fap_font_size
-    if ($this->params->get('custom_css')) {
-        echo $this->params->get('custom_css');
-    } // end custom_css
-    if ($this->params->get('base_font')){ ?>
-    body {
-        font-family: <?php echo $this->params->get('base_font'); ?> !important;
-    }
-    <?php
-    } // end base_font
-    if ($this->params->get('article_header_font')){ ?>
-    .item-title {
-        font-family: <?php echo $this->params->get('article_header_font'); ?> !important;
-    }
-    <?php
-    } // end article_header_font
-    ?>
-</style>
-<?php } ?>
-<script type="text/javascript" src="<?php echo JURI::base();?>templates/<?php echo $this->template;?>/js/skin_alter.js"></script>
-<?php // Fonts
-    if ( ($this->params->get('base_font') && $this->params->get('base_font_google'))
-        || ($this->params->get('article_header_font') && $this->params->get('article_header_font_google') )
-    )
-    {
-        if( $this->params->get('base_font_google') ) {
-            echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://fonts.googleapis.com/css?family=" . urlencode($this->params->get('base_font_google')). "\" />";
-        }
-        if( $this->params->get('article_header_font_google') ) {
-            echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://fonts.googleapis.com/css?family=" . urlencode($this->params->get('article_header_font_google')). "\" />";
-        }
-    }
- ?>
+<?php fap_extra_styles( $this, $session); ?>
+<script type="text/javascript" src="<?php echo JURI::base();?>templates/<?php echo $this->template;?>/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="<?php echo JURI::base();?>templates/<?php echo $this->template;?>/js/fap.js"></script>
+<?php fap_extra_fonts( $this ); ?>
 </head>
-<body class="contentpane <?php echo ($fap_skin_current ? $fap_skin_current : $this->params->get('default_skin')); ?>" id="component-body">
+<body class="contentpane <?php echo ($this->params->get('transitions') ? 'transitions ': '') ?><?php echo ($fap_skin_current ? $fap_skin_current : $this->params->get('default_skin').($this->params->get('default_variant') ? ' ' . $this->params->get('default_variant') : ''));?>" id="component-body">
     <div id="all">
         <div id="main">
             <jdoc:include type="message" />

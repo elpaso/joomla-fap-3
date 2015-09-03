@@ -56,7 +56,7 @@ JHtml::_('behavior.keepalive');
         </fieldset>
     </form>
 </div>
-<div>
+<div class="login-links">
     <ul>
         <li>
             <a href="<?php echo JRoute::_('index.php?option=com_users&view=reset'); ?>">

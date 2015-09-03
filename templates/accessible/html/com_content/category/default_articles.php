@@ -21,9 +21,8 @@ $listDirn   = $this->escape($this->state->get('list.direction'));
 
 ?>
 
-<?php //ABP: override ?>
+<?php //ABP: FAP override ?>
 <script type="text/javascript">
-    // FAP override
     function submitform(pressbutton) {
         if (pressbutton) {
             $('adminForm').task.value = pressbutton;
@@ -76,11 +75,6 @@ $listDirn   = $this->escape($this->state->get('list.direction'));
         <?php endif; ?>
 
         <div class="fap_submit"><button type="submit" class="button btn btn-primary"><?php echo JText::_('FAP_FORM_SUBMIT'); ?></button></div>
-
-        <input type="hidden" name="filter_order" value="" />
-        <input type="hidden" name="filter_order_Dir" value="" />
-        <input type="hidden" name="limitstart" value="" />
-        <input type="hidden" name="task" value="" />
     </fieldset>
     <?php endif; ?>
 
@@ -187,6 +181,13 @@ $listDirn   = $this->escape($this->state->get('list.direction'));
         <?php endforeach; ?>
         </tbody>
     </table>
+    <div class="hidden">
+        <input type="hidden" name="filter_order" value="" />
+        <input type="hidden" name="filter_order_Dir" value="" />
+        <input type="hidden" name="limitstart" value="" />
+        <input type="hidden" name="task" value="" />
+    </div>
+
 <?php endif; ?>
 
 <?php // Code to add a link to submit an article. ?>

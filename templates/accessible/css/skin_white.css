@@ -115,9 +115,6 @@ body.white div#wrapper {
   padding: 0 1em;
   /* CSS 3 :-( */
 }
-body#component-body.white {
-  background: #ffffff !important;
-}
 body.white .module-title {
   color: #ffffff;
   background-color: #002c74;
@@ -287,8 +284,8 @@ body.white div#footer a:focus {
 body.white #main a:hover,
 body.white #main a:active,
 body.white #main a:focus {
-  color: white;
   background-color: #002c74;
+  color: #ffffff;
 }
 body.white div.componentheading {
   color: gray;
@@ -472,4 +469,19 @@ body.white #main a:hover {
 }
 body.white .thumbnail {
   background-color: white;
+}
+body#component-body.white {
+  background: #ffffff !important;
+  margin: 1em;
+}
+/* Fix for background-color:  ignored! */
+body#component-body.white .thumbnail a:focus,
+body#component-body.white .thumbnail a:hover,
+body#component-body.white .thumbnail a:active {
+  color: #002c74;
+  text-decoration: underline;
+}
+body#component-body iframe#imageframe {
+  border: 1px solid #002c74;
+  margin: 1em 0;
 }

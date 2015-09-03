@@ -3,7 +3,7 @@
 * Joomla! FAP 3
 * @package   JoomlaFAP
 * @author    Alessandro Pasotti
-* @copyright    Copyright (C) 2012-2014 Alessandro Pasotti http://www.itopen.it
+* @copyright    Copyright (C) 2012-2015 Alessandro Pasotti http://www.itopen.it
 * @license      GNU/GPL
 *
 * Fonts, sizes and minor blocks settings
@@ -884,7 +884,6 @@ label.block {
 , .moduletable ul.menu ul
 , .moduletable {
     padding: 0;
-    line-height: 1.7em;
 }
 
 .moduletable {
@@ -1079,7 +1078,7 @@ div#footer{
     clear:both;
     padding-top:3px;
     text-align:center;
-    line-height: 2em;
+    line-height: 2;
 }
 
 div#footer .padding{
@@ -1223,8 +1222,7 @@ div.contentpaneopen ul, div.contentpaneopen ul {
     border: none;
 }
 
-#banner a:hover
-, ul.actions li a:hover {
+ul.actions li a:hover {
     background: inherit;
     color: inherit;
 }
@@ -1324,25 +1322,29 @@ div.pagination ul li
     padding: 0 0.4em;
 }
 
+
+li.pagination-prev .pagenav:before,
 ul.pagenav li.previous a:before {
     content: "\e008";
     font-family: "IcoMoon";
     margin-right: 0.5em;
 }
 
-
+li.pagination-next .pagenav:after,
 ul.pagenav li.next a:after {
     content: "\e006";
     font-family: "IcoMoon";
     margin-left: 0.5em;
 }
 
+li.pagination-start .pagenav:before,
 ul.pagenav li.first a:before {
     content: "\e003";
     font-family: "IcoMoon";
     margin-right: 0.5em;
 }
 
+li.pagination-end .pagenav:after,
 ul.pagenav li.last a:after {
     content: "\e004";
     font-family: "IcoMoon";
@@ -1507,7 +1509,7 @@ table {
 }
 
 .userdata .input-small {
-    width: 190px;
+    width: 99%;
 }
 
 #form-login-submit .controls {
@@ -1690,3 +1692,4 @@ dl.albopretorio dd {
 table.albopretorio {
     width: 100%;
 }
+

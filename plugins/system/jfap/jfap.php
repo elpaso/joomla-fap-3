@@ -2,7 +2,7 @@
 /**
 * @version		$Id:$
 * @package		Plg_jFap
-* @copyright	Copyright (C) 2011-2014 ItOpen. All rights reserved.
+* @copyright	Copyright (C) 2011-2015 ItOpen. All rights reserved.
 * @licence      GNU/GPL
 */
 
@@ -26,6 +26,10 @@ class  plgSystemJFap extends JPlugin
             return true;
         }
         $body = JResponse::getBody();
+        $format = JRequest::getVar('format');
+        if ($format=="feed"){
+            return true;
+        }
 
         # Too hungry:
         #$style_regexp = '@<span[^>]*>@is';
@@ -62,7 +66,7 @@ class  plgSystemJFap extends JPlugin
         # Remove style from span
         $style_regexp = '@<span([^>]*?)\sstyle=(["\']).*?\2([^>]*?)>@is';
         $style_replace = '<span\1\3>';
-		$img_regexp = '@<img([^>]*?)\sborder=(["\']).*?\2([^>]*?)>@is';
+        $img_regexp = '@<img([^>]*?)\sborder=(["\']).*?\2([^>]*?)>@is';
         $img_replace = '<img\1\3>';
         # Dublin Core MD
         $dc_desc_regexp = '#<meta name="description"#';
@@ -104,8 +108,6 @@ class  plgSystemJFap extends JPlugin
             $body = str_replace($string, $replace, $body);
         }
 
-        // Fix ampersand
-        $body = preg_replace("/&(?!(?:apos|quot|[gl]t|amp);|#)/", '&amp;', $body);
         JResponse::setBody($body);
     }
 
