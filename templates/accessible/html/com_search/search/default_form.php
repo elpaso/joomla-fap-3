@@ -37,7 +37,7 @@ fap_load_tpl_lang();
         <?php endif;?>
     </div>
 
-    <!-- not accessible due to bootstrap styling of selects
+    <?php /* !-- not accessible due to bootstrap styling of selects
     <fieldset class="phrases">
         <legend><?php echo JText::_('FAP_COM_SEARCH_FOR');?>
         </legend>
@@ -52,7 +52,7 @@ fap_load_tpl_lang();
             </div>
     </fieldset>
 
-    -->
+    --*/ ?>
 
     <?php if ($this->params->get('search_areas', 1)) : ?>
         <fieldset class="only">

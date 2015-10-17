@@ -21,7 +21,8 @@ if (isset($this->error)) : ?>
 <div class="contact-form">
 	<form id="contact-form" action="<?php echo JRoute::_('index.php'); ?>" method="post" class="form-validate form-horizontal">
 		<fieldset>
-			<legend><?php echo JText::_('COM_CONTACT_FORM_LABEL'); ?></legend>
+			<legend><?php echo JText::_('JFAP_COM_CONTACT_FORM_LABEL'); ?></legend>
+            <p><?php echo JText::_('JFAP_COM_CONTACT_FORM_DESC'); ?></p>
 			<div class="control-group">
 				<div class="control-label"><?php echo $this->form->getLabel('contact_name'); ?></div>
 				<div class="controls"><?php echo $this->form->getInput('contact_name'); ?></div>
@@ -41,7 +42,12 @@ if (isset($this->error)) : ?>
 			<?php if ($this->params->get('show_email_copy')) : ?>
 				<div class="control-group">
 					<div class="control-label"><?php echo $this->form->getLabel('contact_email_copy'); ?></div>
-					<div class="controls"><?php echo $this->form->getInput('contact_email_copy'); ?></div>
+					<div class="controls"><?php
+                        // ABP: Add inputbox class for left align of checkbox
+                        $_input = $this->form->getField('contact_email_copy');
+                        $_input->class = 'inputbox';
+                        echo $_input->input;
+                     ?></div>
 				</div>
 			<?php endif; ?>
 			<?php //Dynamically load any additional fields from plugins. ?>

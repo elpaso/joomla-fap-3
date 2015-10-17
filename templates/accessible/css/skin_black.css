@@ -193,3 +193,17 @@ body.black .panel h3.pane-toggler-down a {
 body.black .cat-list-row1 {
   background-color: #222244;
 }
+/* Bootstrap */
+body.black .badge {
+  background-color: white;
+  border-radius: 0.6em;
+  color: #002c74;
+  display: inline-block;
+  line-height: 1;
+  min-width: 0.8em;
+  font-size: 80%;
+  padding: 0.125em 0.25em;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}

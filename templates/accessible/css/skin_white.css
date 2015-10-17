@@ -481,7 +481,21 @@ body#component-body.white .thumbnail a:active {
   color: #002c74;
   text-decoration: underline;
 }
-body#component-body iframe#imageframe {
+body#component-body.white iframe#imageframe {
   border: 1px solid #002c74;
   margin: 1em 0;
+}
+/* Bootstrap */
+body.white .badge {
+  background-color: #003fa7;
+  border-radius: 0.6em;
+  color: white;
+  display: inline-block;
+  line-height: 1;
+  min-width: 0.8em;
+  font-size: 80%;
+  padding: 0.125em 0.25em;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
 }

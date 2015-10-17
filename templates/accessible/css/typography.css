@@ -1483,38 +1483,6 @@ table {
     margin-top: 1em;
 }
 
-/* com/mod login */
-#login-form fieldset.userdata {
-    padding: 0;
-    border: none;
-}
-
-.login-fields label {
-    float: left;
-    width: 9em;
-}
-
-.login-fields {
-    padding: 0.5em;
-}
-
-
-.login button {
-    margin: 0.5em;
-    padding: 0.1em 0.25em;
-}
-
-.userdata .button {
-    margin-left: 0.5em;
-}
-
-.userdata .input-small {
-    width: 99%;
-}
-
-#form-login-submit .controls {
-    text-align: right;
- }
 
 .btn-group {
     display: inline-block;

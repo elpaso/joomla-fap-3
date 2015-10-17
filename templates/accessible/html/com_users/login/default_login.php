@@ -36,23 +36,30 @@ JHtml::_('behavior.keepalive');
     <form action="<?php echo JRoute::_('index.php?option=com_users&task=user.login'); ?>" method="post">
 
         <fieldset>
-            <legend><?php echo JText::_('FAP_COM_USER_LOGIN');?>
-            </legend>
+            <legend><?php echo JText::_('FAP_COM_USER_LOGIN');?></legend>
             <?php foreach ($this->form->getFieldset('credentials') as $field): ?>
                 <?php if (!$field->hidden): ?>
-                    <div class="login-fields"><?php echo $field->label; ?>
-                    <?php echo $field->input; ?></div>
+                <div class="control-group">
+                    <div class="control-label login-fields"><?php echo $field->label; ?></div>
+                    <div class="controls login-fields"><?php echo $field->input; ?></div>
+                </div>
                 <?php endif; ?>
             <?php endforeach; ?>
             <?php if (JPluginHelper::isEnabled('system', 'remember')) : ?>
-            <div class="login-fields">
-                <label id="remember-lbl" for="remember"><?php echo JText::_('JGLOBAL_REMEMBER_ME') ?></label>
-                <input id="remember" type="checkbox" name="remember" class="inputbox" value="yes"  alt="<?php echo JText::_('JGLOBAL_REMEMBER_ME') ?>" />
+            <div class="control-group login-fields">
+                <div class="control-label">
+                    <label id="remember-lbl" for="remember"><?php echo JText::_('JGLOBAL_REMEMBER_ME') ?></label>
+                </div>
+                <div class="controls">
+                    <input id="remember" type="checkbox" name="remember" class="inputbox" value="yes"  alt="<?php echo JText::_('JGLOBAL_REMEMBER_ME') ?>" />
+                </div>
             </div>
             <?php endif; ?>
-            <button type="submit" class="button pull-right"><?php echo JText::_('JLOGIN'); ?></button>
-            <input type="hidden" name="return" value="<?php echo base64_encode($this->params->get('login_redirect_url', $this->form->getValue('return'))); ?>" />
-            <?php echo JHtml::_('form.token'); ?>
+            <div class="form-actions">
+                <button type="submit" class="button pull-right"><?php echo JText::_('JLOGIN'); ?></button>
+                <input type="hidden" name="return" value="<?php echo base64_encode($this->params->get('login_redirect_url', $this->form->getValue('return'))); ?>" />
+                <?php echo JHtml::_('form.token'); ?>
+            </div>
         </fieldset>
     </form>
 </div>
