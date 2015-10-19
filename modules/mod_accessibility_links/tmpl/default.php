@@ -55,7 +55,7 @@ $short = $params->get('short_labels') == 'yes';
     }
 
     if ( $use_im ){
-        JFactory::getDocument()->addStyleSheet( JURI::root() . '/media/mod_accessibility_links/style.css');
+        JFactory::getDocument()->addStyleSheet( JURI::root() . 'media/mod_accessibility_links/style.css');
     }
 
     $im_class = '';

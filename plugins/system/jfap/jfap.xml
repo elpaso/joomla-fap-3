@@ -2,12 +2,12 @@
 <extension version="3.1" type="plugin" group="system" method="upgrade">
     <name>jFap</name>
     <author>Alessandro Pasotti - ItOpen</author>
-    <creationDate>2015-09-03</creationDate>
+    <creationDate>2015-10-17</creationDate>
     <copyright>Copyright (C) 2010-2015 ItOpen. All rights reserved.</copyright>
     <license>http://www.gnu.org/licenses/gpl.txt GNU/GPL</license>
     <authorEmail>info@itopen.it</authorEmail>
     <authorUrl>www.itopen.org</authorUrl>
-    <version>3.20</version>
+    <version>3.21</version>
     <description>This FAP plugin fixes some common accessibility problems.</description>
     <files>
         <filename plugin="jfap">jfap.php</filename>

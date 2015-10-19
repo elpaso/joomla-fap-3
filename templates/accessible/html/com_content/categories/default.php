@@ -11,11 +11,12 @@ defined('_JEXEC') or die;
 
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 
+
+$this->heading_level = 2;
+
 ?>
 <div class="categories-list<?php echo $this->pageclass_sfx;?>">
 	<?php
-        // ABP: inc header level ( - 1 )
-        $this->subcat_header_level = 2;
 		echo JLayoutHelper::render('joomla.content.categories_default', $this);
 		echo $this->loadTemplate('items');
 	?>

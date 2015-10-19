@@ -14,7 +14,9 @@ $class = ' class="first"';
 $lang  = JFactory::getLanguage();
 
 // ABP: inc header level
-$this->subcat_header_level++;
+if ($this->heading_level <= 4){
+    $this->heading_level++;
+}
 
 if (count($this->items[$this->parent->id]) > 0 && $this->maxLevelcat != 0) :
 ?>
@@ -28,7 +30,7 @@ if (count($this->items[$this->parent->id]) > 0 && $this->maxLevelcat != 0) :
 		?>
 		<div <?php echo $class; ?> >
 		<?php $class = ''; ?>
-			<h<?php echo $this->subcat_header_level ?> class="page-header item-title">
+			<h<?php echo $this->heading_level ?> class="page-header item-title">
 				<a href="<?php echo JRoute::_(ContentHelperRoute::getCategoryRoute($item->id));?>">
 				<?php echo $this->escape($item->title); ?></a>
 				<?php if ($this->params->get('show_cat_num_articles_cat') == 1) :?>
@@ -39,7 +41,7 @@ if (count($this->items[$this->parent->id]) > 0 && $this->maxLevelcat != 0) :
 				<?php if (count($item->getChildren()) > 0 && $this->maxLevelcat > 1) : ?>
 					<!-- FAP: no behaviors !-->
 				<?php endif;?>
-			</h<?php echo $this->subcat_header_level ?>>
+			</h<?php echo $this->heading_level ?>>
 			<?php if ($this->params->get('show_description_image') && $item->getParams()->get('image')) : ?>
 				<img src="<?php echo $item->getParams()->get('image'); ?>" alt="<?php echo htmlspecialchars($item->getParams()->get('image_alt')); ?>" />
 			<?php endif; ?>
