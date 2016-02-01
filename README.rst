@@ -24,24 +24,34 @@ I vantaggi di AccessiblePro:
 CONTENUTO DEL PROGETTO
 ----------------------
 
-* un template conforme
+* un template accessibile conforme al livello AAA del WCAG
 * un componente per le accesskey
 * un plugin per correzioni varie
 * un modulo per i collegamenti di accessibilità
 
 AUTORE
 ------
-(C) 2008-2014 Alessandro Pasotti
+(C) 2008-2015 Alessandro Pasotti
 http://www.itopen.it
 http://www.joomlafap.it
 
 
+SOSTENERE IL PROGETTO
+---------------------
+
+Il progetto viene portato avanti grazie al lavoro volontario dell'autore e grazie al fondamentale contributo economico di chi acquista il template AccessiblePRO (http://www.joomlafap.it/accessiblepro) o si avvale di un nostro contratto di manutenzione o assistenza. Una parte consistente (il 25% circa) del ricavato dalle vendite del template AccessiblePRO e dei contratti di assistenza viene infatti dedicato allo sviluppo e alla manutezione del progetto.
+
+Elenco dei sostenitori (se vuoi comparire, lascia un messaggio qui: https://github.com/elpaso/joomla-fap-3/issues):
+
+* Sistema bibliotecario dell Università di Roma tre: https://www.sba.uniroma3.it/it/
+
+
 CONTRIBUTI DI (in ordine cronologico)
 -------------------------------------
-Stefano Alì (sali40)
-Piero Batani (pulce)
-Antonello Bove (handycam)
-Valerio Sichi (vales)
+* Stefano Alì (sali40)
+* Piero Batani (pulce)
+* Antonello Bove (handycam)
+* Valerio Sichi (vales)
 
 LICENZA
 -------
@@ -53,7 +63,6 @@ DEPOSITO CODICE
 ---------------
 
 Il codice viene mantenuto su github https://github.com/elpaso/joomla-fap-3
-
 
 
 SEGNALAZIONE ERRORI
@@ -69,7 +78,6 @@ Se sei uno sviluppatore e hai delle migliorie da proporre (patch) puoi create un
 Se sei un utilizzatore e questo progetto ti ha risolto un problema o fatto risparmiare del tempo, una sponsorizzazione in denaro (anche modesta) è sempre ben accetta, per non dire doverosa.
 
 
-
 ASSISTENZA
 ----------
 
@@ -79,8 +87,7 @@ Siamo disponibili per contratti di assistenza, sviluppo moduli e componenti cust
 
 Contattare: http://www.itopen.it
 
-* per le consulenze gratuite c'è il forum:
-http://forum.joomla.it/index.php?board=23.0
+* per le consulenze gratuite c'è il forum: http://forum.joomla.it/index.php?board=23.0
 * non usare il tracker di github per le richieste di assistenza, l'uso del tracker è riservato agli sviluppatori per la segnalazione di bug e feature request.
 
 
