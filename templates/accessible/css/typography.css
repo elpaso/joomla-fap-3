@@ -52,6 +52,11 @@ h3 {
     font-size: 170%;
 }
 
+h4,
+h3.newsflash-title {
+    font-size: 130%;
+}
+
 h1,h2,h3,h4,h5,h6 {
     margin:0 0 0.5em 0;
 }
@@ -1661,3 +1666,11 @@ table.albopretorio {
     width: 100%;
 }
 
+/* For FE editing SAVE CANCEL buttons */
+.formelm-buttons {
+    margin-bottom: 1em;
+    text-align: right;
+}
+.formelm-buttons .button {
+    font-weight: bold;
+}

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="3.0" method="upgrade">
     <name>AccessKeys</name>
-    <creationDate>2015-10-17</creationDate>
+    <creationDate>2016-02-01</creationDate>
     <author>Alessandro Pasotti - ItOpen</author>
     <authorUrl>http://www.itopen.it</authorUrl>
     <copyright>Copyright 2013 ItOpen</copyright>
     <license>GNU/GPL</license>
-    <version>3.21</version>
+    <version>3.22</version>
     <description>
         <![CDATA[
                  Componente per le accesskey

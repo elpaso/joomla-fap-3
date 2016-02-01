@@ -2,7 +2,7 @@
 /**
 * @version		$Id:$
 * @package		Plg_jFap
-* @copyright	Copyright (C) 2011-2015 ItOpen. All rights reserved.
+* @copyright	Copyright (C) 2011-2016 ItOpen. All rights reserved.
 * @licence      GNU/GPL
 */
 
@@ -20,6 +20,8 @@ jimport( 'joomla.plugin.plugin' );
  */
 class  plgSystemJFap extends JPlugin
 {
+
+
     function onAfterRender(){
         $mainframe = JFactory::getApplication();
         if ($mainframe->isAdmin()){
@@ -30,10 +32,6 @@ class  plgSystemJFap extends JPlugin
         if ($format=="feed"){
             return true;
         }
-
-        # Too hungry:
-        #$style_regexp = '@<span[^>]*>@is';
-        #$style_replace = ''
 
         // Old style tags B I
         $tags_regexp = array('/<b(\s+[^>]*)?>/', '/<\/b>/', '/<i(\s+[^>]*)?>/', '/<\/i>/');
@@ -87,9 +85,9 @@ class  plgSystemJFap extends JPlugin
 					$body);
 
 
-        # onkeypress
-        # Already in the accessibility links
-        #$body = preg_replace('|onclick="(.*?)"|mus', 'onclick="\1" onkeypress="\1"', $body);
+        # CDATA
+        $body = preg_replace('#<script type="text/javascript">(((?!CDATA).)*?)</script>#ms', "<script type=\"text/javascript\">\n/*<![CDATA[*/\n\\1\n/*]]>*/\n</script>", $body);
+
         // Set external link class
         if (preg_match_all( "/<a[^>]*?href=[\"'](http[s]*:\/\/[^\"']+)[\"'][^>]*>/" , $body , $matches)){
             //vardie($matches);

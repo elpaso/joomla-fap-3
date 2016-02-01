@@ -114,6 +114,7 @@ function fap_skin_set(skin){
         jQuery('body').removeClass(v);
     });
     jQuery('body').addClass(skin);
+    jQuery('body').trigger( "skinchanged", [ ] );
     return false;
 }
 
