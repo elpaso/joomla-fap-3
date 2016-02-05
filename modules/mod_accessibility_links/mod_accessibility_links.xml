@@ -6,12 +6,12 @@
           method="upgrade">
     <name>Accessibility Links</name>
     <author>Alessandro Pasotti - ItOpen</author>
-    <creationDate>2016-02-01</creationDate>
+    <creationDate>2016-02-05</creationDate>
     <copyright>Copyright (C) 2014 ItOpen. All rights reserved.</copyright>
     <license>http://www.gnu.org/licenses/gpl.txt GNU/GPL</license>
     <authorEmail>info@itopen.it</authorEmail>
     <authorUrl>www.itopen.org</authorUrl>
-    <version>3.22</version>
+    <version>3.23</version>
     <description>MOD_ACCESSIBILITY_LINKS_DESC</description>
 
     <updateservers>
