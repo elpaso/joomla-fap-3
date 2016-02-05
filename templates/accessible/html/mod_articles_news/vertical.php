@@ -8,6 +8,7 @@
  */
 
 defined('_JEXEC') or die;
+
 ?>
 <ul class="newsflash-vert<?php echo $params->get('moduleclass_sfx'); ?>">
 	<?php for ($i = 0, $n = count($list); $i < $n; $i ++) : ?>
