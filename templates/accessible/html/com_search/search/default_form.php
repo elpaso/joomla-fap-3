@@ -26,7 +26,7 @@ fap_load_tpl_lang();
         <label for="search-searchword">
             <?php echo JText::_('COM_SEARCH_SEARCH_KEYWORD'); ?>
         </label>
-        <input type="text" name="searchword" id="search-searchword" size="30" maxlength="<?php echo $upper_limit; ?>" value="<?php echo $this->escape($this->origkeyword); ?>" class="inputbox" />
+        <input type="text" name="searchword" id="search-searchword" size="30" maxlength="<?php echo $upper_limit; ?>" value="<?php echo $this->escape($this->origkeyword); ?>" class="inputbox form-control" />
         <button name="Search" onclick="this.form.submit()" class="button"><?php echo JText::_('COM_SEARCH_SEARCH');?></button>
         <input type="hidden" name="task" value="search" />
     </fieldset>

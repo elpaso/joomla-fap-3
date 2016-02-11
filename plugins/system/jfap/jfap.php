@@ -85,8 +85,8 @@ class  plgSystemJFap extends JPlugin
 					$body);
 
 
-        # CDATA
-        $body = preg_replace('#<script type="text/javascript">(((?!CDATA).)*?)</script>#ms', "<script type=\"text/javascript\">\n/*<![CDATA[*/\n\\1\n/*]]>*/\n</script>", $body);
+        # CDATA (((?!CDATA).)*?) -> it's correct but may crash PHP!
+        #$body = preg_replace('#<script type="text/javascript">(((?!CDATA).)*?)</script>#ms', "<script type=\"text/javascript\">\n/*<![CDATA[*/\n\\1\n/*]]>*/\n</script>", $body);
 
         // Set external link class
         if (preg_match_all( "/<a[^>]*?href=[\"'](http[s]*:\/\/[^\"']+)[\"'][^>]*>/" , $body , $matches)){

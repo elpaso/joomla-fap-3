@@ -4,7 +4,7 @@
 * Joomla! FAP 3
 * @package   JoomlaFAP
 * @author    Alessandro Pasotti
-* @copyright    Copyright (C) 2012-2014 Alessandro Pasotti http://www.itopen.it
+* @copyright    Copyright (C) 2012-2016 Alessandro Pasotti http://www.itopen.it
 * @license      GNU/GPL
 
     This program is free software: you can redistribute it and/or modify
@@ -118,6 +118,10 @@ if($fap_font_size_request = JRequest::getVar('fap_font_size')){
     $font_size = min($font_size, 100);
     $session->set('fap_font_size', $font_size);
 }
+
+// Load icomoon icons
+$doc = JFactory::getDocument();
+$doc->addStyleSheet($this->baseurl.'/media/jui/css/icomoon.css');
 
 
 // End configuration, starts output

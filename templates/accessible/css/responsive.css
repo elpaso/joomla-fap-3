@@ -12,6 +12,7 @@
 /* activate left border on menu */
 /* global switch */
 /* menu header has bottom border only: light theme */
+/* Rounded corners in module headers */
 /* def.: 76% */
 /***********************************************************************
 /* Derived colors
@@ -162,6 +163,9 @@ body.fap-small #menu-top {
 }
 body.fap-small .slicknav_menu {
   display: block;
+}
+body.fap-small div#accessibility-links {
+  margin: 0.5em 0;
 }
 body.fap-small span.accessibility-text,
 body.fap-small span.accessibility-label {

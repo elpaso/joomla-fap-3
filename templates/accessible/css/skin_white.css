@@ -13,6 +13,7 @@
 /* activate left border on menu */
 /* global switch */
 /* menu header has bottom border only: light theme */
+/* Rounded corners in module headers */
 /* def.: 76% */
 /***********************************************************************
 /* Derived colors
@@ -234,7 +235,7 @@ body.white div#menu-top ul.menu li ul a {
   border-right: none;
 }
 body.white div#menu-top .menu > li > ul {
-  border: solid 1px #002c74;
+  border: solid 1px #ffffff;
 }
 /* normal colors */
 body.white div#menu-top .menu li.parent:hover > ul,
@@ -331,6 +332,7 @@ body.white .button-search,
   color: #ffffff;
 }
 body.white .button:hover,
+body.white .btn:hover,
 body.white button:hover,
 body.white .btn-toolbar .btn:hover,
 body.white .button-search:hover {
@@ -498,4 +500,30 @@ body.white .badge {
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
+}
+/* Rounded */
+body.white.rounded .btn,
+body.white.rounded .button,
+body.white.rounded.headroom--top div#menu-top,
+body.white.rounded .pagination,
+body.white.rounded ul.pagenav,
+body.white.rounded .readmore a,
+body.white.rounded .center-module-highlight {
+  border: none;
+  border-radius: 4px;
+}
+/* rounded left */
+body.white.rounded.headroom--top div#menu-top ul.menu li > a.first {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+/* rounded right */
+body.white.rounded .readmore a::after {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+/* rounded top */
+body.white.rounded div#footer .padding {
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
 }

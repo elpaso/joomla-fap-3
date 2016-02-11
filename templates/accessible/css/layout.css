@@ -236,14 +236,3 @@ div.blog {
 .item-separator {
     clear: both;
 }
-
-.control-group > div.controls > input,
-.control-group > div.controls > textarea {
-    display:block;
-    width:100%;
-    padding:0;
-}
-
-.control-group > div.controls > .inputbox {
-    width: inherit;
-}

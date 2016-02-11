@@ -29,11 +29,11 @@ JHtml::_('bootstrap.tooltip');
                             <span class="icon-user hasTooltip" title="<?php echo JText::_('MOD_LOGIN_VALUE_USERNAME') ?>"></span>
                             <label for="modlgn-username"><?php echo JText::_('MOD_LOGIN_VALUE_USERNAME'); ?></label>
                         </span>
-                        <input id="modlgn-username" type="text" name="username" class="input-small" tabindex="0" size="18" title="<?php echo JText::_('MOD_LOGIN_VALUE_USERNAME') ?>" />
+                        <input id="modlgn-username" type="text" name="username" class="input-small form-control" tabindex="0" size="18" title="<?php echo JText::_('MOD_LOGIN_VALUE_USERNAME') ?>" />
                     </div>
                 <?php else: ?>
                     <label for="modlgn-username"><?php echo JText::_('MOD_LOGIN_VALUE_USERNAME') ?></label>
-                    <input id="modlgn-username" type="text" name="username" class="input-small" tabindex="0" size="18" title="<?php echo JText::_('MOD_LOGIN_VALUE_USERNAME') ?>" />
+                    <input id="modlgn-username" type="text" name="username" class="input-small form-control" tabindex="0" size="18" title="<?php echo JText::_('MOD_LOGIN_VALUE_USERNAME') ?>" />
                 <?php endif; ?>
             </div>
         </div>
@@ -47,11 +47,11 @@ JHtml::_('bootstrap.tooltip');
                                 <label for="modlgn-passwd"><?php echo JText::_('JGLOBAL_PASSWORD'); ?>
                             </label>
                         </span>
-                        <input id="modlgn-passwd" type="password" name="password" class="input-small" tabindex="0" size="18" title="<?php echo JText::_('JGLOBAL_PASSWORD') ?>" />
+                        <input id="modlgn-passwd" type="password" name="password" class="input-small form-control" tabindex="0" size="18" title="<?php echo JText::_('JGLOBAL_PASSWORD') ?>" />
                     </div>
                 <?php else: ?>
                     <label for="modlgn-passwd"><?php echo JText::_('JGLOBAL_PASSWORD') ?></label>
-                    <input id="modlgn-passwd" type="password" name="password" class="input-small" tabindex="0" size="18" title="<?php echo JText::_('JGLOBAL_PASSWORD') ?>" />
+                    <input id="modlgn-passwd" type="password" name="password" class="input-small form-control" tabindex="0" size="18" title="<?php echo JText::_('JGLOBAL_PASSWORD') ?>" />
                 <?php endif; ?>
             </div>
         </div>
@@ -69,11 +69,11 @@ JHtml::_('bootstrap.tooltip');
                                 </span>
                             </label>
                         </span>
-                        <input id="modlgn-secretkey" type="text" name="secretkey" class="input-small" tabindex="0" size="18" title="<?php echo JText::_('JGLOBAL_SECRETKEY') ?>" />
+                        <input id="modlgn-secretkey" type="text" name="secretkey" class="input-small form-control" tabindex="0" size="18" title="<?php echo JText::_('JGLOBAL_SECRETKEY') ?>" />
                 </div>
                 <?php else: ?>
                     <label for="modlgn-secretkey"><?php echo JText::_('JGLOBAL_SECRETKEY') ?></label>
-                    <input id="modlgn-secretkey" type="text" name="secretkey" class="input-small" tabindex="0" size="18" title="<?php echo JText::_('JGLOBAL_SECRETKEY') ?>" />
+                    <input id="modlgn-secretkey" type="text" name="secretkey" class="input-small form-control" tabindex="0" size="18" title="<?php echo JText::_('JGLOBAL_SECRETKEY') ?>" />
                     <span class="btn width-auto hasTooltip" title="<?php echo JText::_('JGLOBAL_SECRETKEY_HELP'); ?>">
                         <span class="icon-help"></span>
                     </span>
@@ -84,7 +84,8 @@ JHtml::_('bootstrap.tooltip');
         <?php endif; ?>
         <?php if (JPluginHelper::isEnabled('system', 'remember')) : ?>
         <div id="form-login-remember" class="control-group checkbox">
-            <label for="modlgn-remember" class="control-label"><?php echo JText::_('MOD_LOGIN_REMEMBER_ME') ?></label> <input id="modlgn-remember" type="checkbox" name="remember" class="inputbox" value="yes"/>
+            <label for="modlgn-remember" class="control-label"><?php echo JText::_('MOD_LOGIN_REMEMBER_ME') ?></label>
+            <input id="modlgn-remember" type="checkbox" name="remember" class="inputbox form-control" value="yes"/>
         </div>
         <?php endif; ?>
         <div id="form-login-submit" class="control-group">
