@@ -22,74 +22,75 @@ JHtml::_('bootstrap.tooltip');
     <?php endif; ?>
     <div class="userdata">
         <div id="form-login-username" class="control-group">
-            <div class="controls">
+            <div class="control-label">
                 <?php if (!$params->get('usetext')) : ?>
-                    <div class="input-prepend">
-                        <span class="add-on">
-                            <span class="icon-user hasTooltip" title="<?php echo JText::_('MOD_LOGIN_VALUE_USERNAME') ?>"></span>
-                            <label for="modlgn-username"><?php echo JText::_('MOD_LOGIN_VALUE_USERNAME'); ?></label>
-                        </span>
-                        <input id="modlgn-username" type="text" name="username" class="input-small form-control" tabindex="0" size="18" title="<?php echo JText::_('MOD_LOGIN_VALUE_USERNAME') ?>" />
-                    </div>
+                    <span class="icon-user hasTooltip" title="<?php echo JText::_('MOD_LOGIN_VALUE_USERNAME') ?>"></span>
+                    <label for="modlgn-username"><?php echo JText::_('MOD_LOGIN_VALUE_USERNAME'); ?></label>
                 <?php else: ?>
                     <label for="modlgn-username"><?php echo JText::_('MOD_LOGIN_VALUE_USERNAME') ?></label>
+                <?php endif; ?>
+            </div>
+            <div class="controls">
+                <?php if (!$params->get('usetext')) : ?>
+                        <input id="modlgn-username" type="text" name="username" class="input-small form-control" tabindex="0" size="18" title="<?php echo JText::_('MOD_LOGIN_VALUE_USERNAME') ?>" />
+                <?php else: ?>
                     <input id="modlgn-username" type="text" name="username" class="input-small form-control" tabindex="0" size="18" title="<?php echo JText::_('MOD_LOGIN_VALUE_USERNAME') ?>" />
                 <?php endif; ?>
             </div>
         </div>
         <div id="form-login-password" class="control-group">
-            <div class="controls">
+            <div class="control-label">
                 <?php if (!$params->get('usetext')) : ?>
-                    <div class="input-prepend">
-                        <span class="add-on">
-                            <span class="icon-lock hasTooltip" title="<?php echo JText::_('JGLOBAL_PASSWORD') ?>">
-                            </span>
-                                <label for="modlgn-passwd"><?php echo JText::_('JGLOBAL_PASSWORD'); ?>
-                            </label>
-                        </span>
-                        <input id="modlgn-passwd" type="password" name="password" class="input-small form-control" tabindex="0" size="18" title="<?php echo JText::_('JGLOBAL_PASSWORD') ?>" />
-                    </div>
+                    <span class="icon-lock hasTooltip" title="<?php echo JText::_('JGLOBAL_PASSWORD') ?>"></span>
+                    <label for="modlgn-passwd"><?php echo JText::_('JGLOBAL_PASSWORD'); ?></label>
                 <?php else: ?>
                     <label for="modlgn-passwd"><?php echo JText::_('JGLOBAL_PASSWORD') ?></label>
+                <?php endif; ?>
+            </div>
+            <div class="controls">
+                <?php if (!$params->get('usetext')) : ?>
+                    <input id="modlgn-passwd" type="password" name="password" class="input-small form-control" tabindex="0" size="18" title="<?php echo JText::_('JGLOBAL_PASSWORD') ?>" />
+                <?php else: ?>
                     <input id="modlgn-passwd" type="password" name="password" class="input-small form-control" tabindex="0" size="18" title="<?php echo JText::_('JGLOBAL_PASSWORD') ?>" />
                 <?php endif; ?>
             </div>
         </div>
         <?php if (count($twofactormethods) > 1): ?>
         <div id="form-login-secretkey" class="control-group">
-            <div class="controls">
+            <div class="control-label">
                 <?php if (!$params->get('usetext')) : ?>
-                    <div class="input-prepend input-append">
-                        <span class="add-on">
-                            <span class="icon-star hasTooltip" title="<?php echo JText::_('JGLOBAL_SECRETKEY'); ?>">
-                            </span>
-                                <label for="modlgn-secretkey"><?php echo JText::_('JGLOBAL_SECRETKEY'); ?>
-                                <span class="hasTooltip" title="<?php echo JText::_('JGLOBAL_SECRETKEY_HELP'); ?>">
-                                    <span class="icon-help"></span>
-                                </span>
-                            </label>
+                    <span class="icon-star hasTooltip" title="<?php echo JText::_('JGLOBAL_SECRETKEY'); ?>"></span>
+                    <label for="modlgn-secretkey"><?php echo JText::_('JGLOBAL_SECRETKEY'); ?>
+                        <span class="hasTooltip" title="<?php echo JText::_('JGLOBAL_SECRETKEY_HELP'); ?>">
+                            <span class="icon-help"></span>
                         </span>
-                        <input id="modlgn-secretkey" type="text" name="secretkey" class="input-small form-control" tabindex="0" size="18" title="<?php echo JText::_('JGLOBAL_SECRETKEY') ?>" />
-                </div>
+                    </label>
                 <?php else: ?>
                     <label for="modlgn-secretkey"><?php echo JText::_('JGLOBAL_SECRETKEY') ?></label>
+                <?php endif; ?>
+            </div>
+            <div class="controls">
+                <?php if (!$params->get('usetext')) : ?>
+                    <input id="modlgn-secretkey" type="text" name="secretkey" class="input-small form-control" tabindex="0" size="18" title="<?php echo JText::_('JGLOBAL_SECRETKEY') ?>" />
+                <?php else: ?>
                     <input id="modlgn-secretkey" type="text" name="secretkey" class="input-small form-control" tabindex="0" size="18" title="<?php echo JText::_('JGLOBAL_SECRETKEY') ?>" />
                     <span class="btn width-auto hasTooltip" title="<?php echo JText::_('JGLOBAL_SECRETKEY_HELP'); ?>">
                         <span class="icon-help"></span>
                     </span>
                 <?php endif; ?>
-
             </div>
         </div>
         <?php endif; ?>
         <?php if (JPluginHelper::isEnabled('system', 'remember')) : ?>
         <div id="form-login-remember" class="control-group checkbox">
-            <label for="modlgn-remember" class="control-label"><?php echo JText::_('MOD_LOGIN_REMEMBER_ME') ?></label>
-            <input id="modlgn-remember" type="checkbox" name="remember" class="inputbox form-control" value="yes"/>
+            <div class="control-label">
+                <label for="modlgn-remember" class="control-label"><?php echo JText::_('MOD_LOGIN_REMEMBER_ME') ?></label>
+                <input id="modlgn-remember" type="checkbox" name="remember" class="inputbox form-control" value="yes"/>
+            </div>
         </div>
         <?php endif; ?>
-        <div id="form-login-submit" class="control-group">
-            <div class="controls">
+        <div id="form-login-submit" class="control-group clearfix">
+            <div class="controls fap-submit">
                 <button type="submit" tabindex="0" name="Submit" class="btn btn-primary"><?php echo JText::_('JLOGIN') ?></button>
             </div>
         </div>
@@ -104,10 +105,10 @@ JHtml::_('bootstrap.tooltip');
             <?php endif; ?>
                 <li>
                     <a href="<?php echo JRoute::_('index.php?option=com_users&view=remind'); ?>">
-                      <?php echo JText::_('MOD_LOGIN_FORGOT_YOUR_USERNAME'); ?></a>
+                      <?php echo JText::_('MOD_LOGIN_FORGOT_YOUR_USERNAME'); ?> <span class="icon-arrow-right"></span></a>
                 </li>
                 <li>
-                    <a href="<?php echo JRoute::_('index.php?option=com_users&view=reset'); ?>"><?php echo JText::_('MOD_LOGIN_FORGOT_YOUR_PASSWORD'); ?></a>
+                    <a href="<?php echo JRoute::_('index.php?option=com_users&view=reset'); ?>"><?php echo JText::_('MOD_LOGIN_FORGOT_YOUR_PASSWORD'); ?> <span class="icon-arrow-right"></span></a>
                 </li>
 
             </ul>

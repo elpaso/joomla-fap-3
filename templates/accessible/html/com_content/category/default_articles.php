@@ -74,7 +74,7 @@ $listDirn   = $this->escape($this->state->get('list.direction'));
         </div>
         <?php endif; ?>
 
-        <div class="fap_submit"><button type="submit" class="button btn btn-primary"><?php echo JText::_('FAP_FORM_SUBMIT'); ?></button></div>
+        <div class="fap-submit"><button type="submit" class="button btn btn-primary"><?php echo JText::_('FAP_FORM_SUBMIT'); ?></button></div>
     </fieldset>
     <?php endif; ?>
 

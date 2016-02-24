@@ -40,13 +40,15 @@ body div#wrapper {
 
 div.padding {
     padding: 0.5em;
-  }
+}
 
 
 div#sidebar-left {
     float: left;
     width: 23%;
+/*
     overflow: hidden;
+*/
 /*
     margin-top: 1em;
 */
@@ -72,14 +74,16 @@ div#sidebar-right div.padding {
     padding-right: 0;
   }
 
-div#menu-top div.padding {
-    padding-left: 0;
+div.menu-top div.padding {
+    padding: 0;
   }
 
 div#sidebar-right {
     float: right;
     width: 23%;
+/*
     overflow: hidden;
+*/
 /*
     margin-top: 1em;
 */
@@ -121,27 +125,27 @@ div#accessibility-links {
 }
 
 
-div#menu-top {
+div.menu-top {
     width: 100%;
     margin-bottom: 1em;
 }
 
 
-.headroom--not-top div#menu-top{
+.headroom--not-top div.menu-top{
     position: fixed;
     top: 0;
     z-index: 99999;
 }
 
-.headroom--not-top div#menu-top-bg{
+.headroom--not-top div.menu-top-bg{
     display: block;
     position: fixed;
     top: 0;
     z-index: 99998;
 }
 
-div#menu-top-bg,
-.fap-small div#menu-top-bg {
+div.menu-top-bg,
+.fap-small div.menu-top-bg {
     display: none;
     width: 100%;
 }

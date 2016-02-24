@@ -12,6 +12,7 @@
 /* activate left border on menu */
 /* global switch */
 /* menu header has bottom border only: light theme */
+/* border for submenu */
 /* Rounded corners in module headers */
 /* def.: 76% */
 /***********************************************************************
@@ -20,6 +21,7 @@
 /* Layout small bits */
 /* menu top font-weight */
 /* .moduletable .menu */
+/* only if has right border */
 /**********************************************************************/
 /* Computed styles
  */

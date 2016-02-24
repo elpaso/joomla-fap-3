@@ -21,6 +21,15 @@ jimport( 'joomla.plugin.plugin' );
 class  plgSystemJFap extends JPlugin
 {
 
+    function onBeforeCompileHead(){
+        # CDATA
+        if (array_key_exists('text/javascript', JFactory::getDocument()->_script) &&
+            strpos(JFactory::getDocument()->_script['text/javascript'], 'CDATA') === false){
+                JFactory::getDocument()->_script['text/javascript'] = "/* <![CDATA[ */\n" .
+                    JFactory::getDocument()->_script['text/javascript'] .
+                    "\n/* ]]> */\n";
+        }
+    }
 
     function onAfterRender(){
         $mainframe = JFactory::getApplication();
@@ -86,6 +95,7 @@ class  plgSystemJFap extends JPlugin
 
 
         # CDATA (((?!CDATA).)*?) -> it's correct but may crash PHP!
+        # Now done in onBeforeCompileHead
         #$body = preg_replace('#<script type="text/javascript">(((?!CDATA).)*?)</script>#ms', "<script type=\"text/javascript\">\n/*<![CDATA[*/\n\\1\n/*]]>*/\n</script>", $body);
 
         // Set external link class

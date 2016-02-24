@@ -4,22 +4,34 @@
  * @subpackage  mod_search
  *
  * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2016 ItOpen di Alessandro Pasotti, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 defined('_JEXEC') or die;
+
+require_once dirname(__FILE__) . '/../fap_utils.php';
+$value = JRequest::getString('searchword', '');
+
 ?>
 <div class="search<?php echo $moduleclass_sfx ?> fap-search">
 	<form action="<?php echo JRoute::_('index.php');?>" method="post" class="form-inline">
 		<?php
 			$output = '<div><label for="mod-search-searchword" class="element-invisible">' . $label . '</label> ';
-			$output .= '<input id="mod-search-searchword" name="searchword" maxlength="' . $maxlength . '"  class="inputbox search-query form-control" type="text" size="' . $width . '" value="' . $text . '"  onblur="if (this.value==\'\') this.value=\'' . $text . '\';" onfocus="if (this.value==\'' . $text . '\') this.value=\'\';" />';
+
+            if ( ! $value ) {
+                $klass = 'class="inputbox search-query form-control placeholder" ';
+            } else {
+                $klass = 'class="inputbox search-query form-control" "value="' . $value . '" ';
+            }
+
+			$output .= '<input ' . $klass . 'id="mod-search-searchword" name="searchword" maxlength="' . $maxlength . '" type="text" size="' . $width . '" ' . fap_placeholder($text) . ' />';
 
 			if ($button) :
 				if ($imagebutton) :
 					$btn_output = ' <input type="image" value="' . $button_text . '" class="button" src="' . $img . '" onclick="this.form.searchword.focus();"/>';
 				else :
-					$btn_output = ' <button class="button btn btn-primary" onclick="this.form.searchword.focus();">' . $button_text . '</button>';
+					$btn_output = ' <button class="button btn btn-primary" onclick="this.form.searchword.focus();"><span class="icon-search"></span>' . ( $button_text ? ' ' : '') . $button_text . '</button>';
 				endif;
 
 				switch ($button_pos) :

@@ -13,6 +13,7 @@
 /* activate left border on menu */
 /* global switch */
 /* menu header has bottom border only: light theme */
+/* border for submenu */
 /* Rounded corners in module headers */
 /* def.: 76% */
 /***********************************************************************
@@ -21,6 +22,7 @@
 /* Layout small bits */
 /* menu top font-weight */
 /* .moduletable .menu */
+/* only if has right border */
 /**********************************************************************/
 /* Computed styles
  */
@@ -116,7 +118,7 @@ body.white div#wrapper {
   padding: 0 1em;
   /* CSS 3 :-( */
 }
-body.white .module-title {
+body.white .moduletable .module-title {
   color: #ffffff;
   background-color: #002c74;
   padding: 0.5em 0 0.5em 0.5em;
@@ -146,9 +148,11 @@ body.white .menu li li li a,
 body.white .menu ul.parent li a {
   border-top: none;
 }
-body.white .menu li.current > a:link {
-  background-color: #dae8ff;
+/*
+body.white .menu li.current > a:link{
+    background-color: @menu_bg_lighter;
 }
+*/
 /*
 body.white .menu li.current li a {
     background-color: white;
@@ -170,25 +174,26 @@ body.white .menu li.current > a:active {
 }
 /* custom theme menu */
 /* TOP menu */
-body.white div#menu-top .menu li {
+body.white div.menu-top .menu li {
   border-bottom: none;
 }
-body.white div#menu-top .menu li a {
+body.white div.menu-top .menu li a {
   font-weight: bold;
   font-size: 110%;
-  margin: 1px 0;
 }
 /*
-body.white div#menu-top .menu li.current > a {
+body.white div.menu-top .menu li.current > a {
     color: @menu_top_fg;
     background-color: transparent;
 }
 */
-body.white div#menu-top .menu a {
-  background-color: #002c74;
+body.white div.menu-top .menu a {
+  /*
+    background-color: @menu_top_bg;
+*/
   color: #ffffff;
 }
-body.white div#menu-top-bg {
+body.white div.menu-top-bg {
   background-color: #002c74;
   color: #ffffff;
   box-shadow: 0 3px 10px 6px rgba(0, 0, 0, 0.3);
@@ -198,25 +203,28 @@ body.white div#logo a:active,
 body.white div#logo a:hover {
   background: none;
 }
-body.white div#menu-top {
+body.white div.menu-top .mod_menu {
   background-color: #002c74;
   color: #ffffff;
 }
-body.white div#menu-top .menu li.current a:hover,
-body.white div#menu-top .menu a:hover,
-body.white div#menu-top .menu a:focus {
+body.white div.menu-top .menu li.current a:hover,
+body.white div.menu-top .menu a:hover,
+body.white div.menu-top .menu a:focus {
   background-color: #ffffff;
   color: #002c74;
+}
+/* Highlight module */
+body.white .center-module-highlight {
+  background-color: #ffffff;
+  border: solid 1px #002c74;
+  margin: 0.5em;
+  /* must match that of .padding in typography.css */
 }
 body.white .center-module-highlight .module-content p {
   margin: 0;
 }
 body.white .center-module-highlight .padding {
   padding: 1em;
-}
-body.white .center-module-highlight {
-  background-color: #ffffff;
-  border: solid 1px #002c74;
 }
 body.white .center-module-highlight .module-title {
   font-size: 150%;
@@ -225,45 +233,57 @@ body.white .center-module-highlight .module-title {
   margin: 0.5em 0;
   background-image: none;
   background-color: inherit;
+  color: #990033;
 }
 /* white specific */
-body.white div#menu-top ul.menu li ul a {
+body.white div.menu-top ul.menu li ul a {
   /*
     color: @menu_top_fg;
 */
   background-image: none;
   border-right: none;
 }
-body.white div#menu-top .menu > li > ul {
-  border: solid 1px #ffffff;
+body.white div.menu-top .moduletable.mod_menu .menu > li > ul {
+  /*
+    border: @menu_top_submenu_border;
+    & when (@menu_top_has_right_border = true){
+        margin-left: -1px;
+    }
+*/
+}
+/* optional shadow for moduletable */
+body.white.shadows .shadows {
+  box-shadow: 2px 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+body.white.shadows .noshadows {
+  box-shadow: none;
+}
+body.white.headroom--not-top.shadows div.menu-top .shadows {
+  box-shadow: none;
 }
 /* normal colors */
-body.white div#menu-top .menu li.parent:hover > ul,
-body.white div#menu-top .menu li.parent a:focus + ul,
-body.white div#menu-top .menu ul li a,
-body.white div#menu-top .menu li.parent[aria-expanded="true"] ul,
-body.white div#menu-top .menu ul li.current a {
+body.white div.menu-top .menu li.parent:hover > ul,
+body.white div.menu-top .menu li.parent a:focus + ul,
+body.white div.menu-top .menu li.parent[aria-expanded="true"] ul {
   color: #ffffff;
   background-color: #002c74;
 }
-body.white div#menu-top .menu ul ul li a {
+body.white div.menu-top .menu ul ul li a {
   font-weight: normal;
   padding-left: 1em;
 }
-body.white div#menu-top .menu ul li a:focus,
-body.white div#menu-top .menu ul li a:hover {
+body.white div.menu-top .menu ul li a:focus,
+body.white div.menu-top .menu ul li a:hover {
   background-color: #ffffff;
   color: #002c74;
 }
 /* BUG: when focus is in the submenu, display is none
-body.white div#menu-top .menu li.parent:hover > ul,
-body.white div#menu-top .menu li.parent a:focus +  ul {
+body.white div.menu-top .menu li.parent:hover > ul,
+body.white div.menu-top .menu li.parent a:focus +  ul {
     background-color: @menu_top_bg;
 }
 */
 /* moduletable menu */
-body.white .moduletable_menu,
-body.white .moduletable-menu,
 body.white .moduletable {
   border: solid 1px #002c74;
 }
@@ -300,7 +320,11 @@ body.white .readmore a {
   /* AAA: links underlined
     border-bottom: dotted 1px @readmore_fg;
     */
-  padding: 0.2em 0 0.2em 0.5em;
+  display: inline-block;
+  padding: 0 1em 0 0.5em;
+  /*
+    padding: 0.2em 0 0.2em 0.5em;
+*/
   background-color: #eeeeff;
   text-decoration: none;
 }
@@ -309,11 +333,14 @@ body.white .readmore a:after {
   background-color: #002c74;
   color: #ffffff;
   margin-left: 0.3em;
-  padding: 0.3em 0.1em;
-  vertical-align: top;
+  /*
+    padding: 0.2em 0.1em;
+*/
   content: "\e006";
   font-family: "IcoMoon";
-  font-size: small;
+  padding: 0 0.1em;
+  display: inline-block;
+  position: absolute;
 }
 body.white .readmore a:focus,
 body.white .readmore a:hover,
@@ -504,7 +531,6 @@ body.white .badge {
 /* Rounded */
 body.white.rounded .btn,
 body.white.rounded .button,
-body.white.rounded.headroom--top div#menu-top,
 body.white.rounded .pagination,
 body.white.rounded ul.pagenav,
 body.white.rounded .readmore a,
@@ -512,10 +538,28 @@ body.white.rounded .center-module-highlight {
   border: none;
   border-radius: 4px;
 }
+/* Rounded full */
+body.white.rounded .rounded,
+body.white.rounded .moduletable.rounded .flexslider,
+body.white.rounded .moduletable.rounded .flexslider > .slides img,
+body.white.rounded .moduletable.rounded .flex-viewport {
+  border-radius: 4px;
+}
+/* Fix for loader */
+body.white.rounded .flexslider.loader {
+  border-radius: 50% !important;
+}
+/* rounded bottom submenu */
+body.white.rounded div.menu-top .nav-child.level-1 {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-bottom: 4px;
+}
 /* rounded left */
-body.white.rounded.headroom--top div#menu-top ul.menu li > a.first {
+body.white.rounded.headroom--top div.menu-top .mod_menu.rounded ul.menu li > a.first {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
+  margin-left: 1px;
 }
 /* rounded right */
 body.white.rounded .readmore a::after {
@@ -526,4 +570,7 @@ body.white.rounded .readmore a::after {
 body.white.rounded div#footer .padding {
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
+}
+body.white.rounded .norounded {
+  border-radius: 0;
 }

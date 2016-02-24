@@ -24,9 +24,25 @@
 
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-function modChrome_accessible( $module, &$params, &$attribs ) {
+/**
+ * Adds a moduletable div
+ *
+ * shadows: default false
+ * rounded: default false
+ *
+ */
+function modChrome_Accessible( $module, &$params, &$attribs ) {
 	if (!empty ($module->content)) : ?>
-		<div class="moduletable<?php echo htmlspecialchars($params->get('moduleclass_sfx')); ?>">
+		<div class="moduletable<?php
+            echo htmlspecialchars($params->get('moduleclass_sfx'));
+            echo " $module->module";
+            if(@$attribs['shadows'] == 'true'){
+                echo " shadows";
+            }
+            if(@$attribs['rounded'] == 'true'){
+                echo " rounded";
+            }
+        ?> clearfix">
 		<?php if ($module->showtitle != 0) :
 			$heading_tag = JFactory::getDocument()->params->get('module_heading', 'div');
 		?>
@@ -37,7 +53,73 @@ function modChrome_accessible( $module, &$params, &$attribs ) {
 			</div>
 		</div>
 	<?php endif;
-
 }
+
+/**
+ * Adds a moduletable div
+ *
+ * shadows: default
+ * rounded: true
+ *
+ */
+function modChrome_AccessibleRounded( $module, &$params, &$attribs ) {
+    $attribs['rounded'] = 'true';
+    modChrome_Accessible( $module, $params, $attribs );
+}
+
+
+/**
+ * Adds a moduletable div
+ *
+ * shadows: true
+ * rounded: true
+ *
+ */
+function modChrome_AccessibleRoundedShadows( $module, &$params, &$attribs ) {
+    $attribs['shadows'] = 'true';
+    modChrome_AccessibleRounded( $module, $params, $attribs );
+}
+
+
+/**
+ * Adds a moduletable div
+ *
+ * shadows: true
+ * rounded: default
+ *
+ */
+function modChrome_AccessibleShadows( $module, &$params, &$attribs ) {
+    $attribs['shadows'] = 'true';
+    modChrome_Accessible( $module, $params, $attribs );
+}
+
+
+/**
+ * Adds a moduletable div
+ *
+ * shadows: false
+ * rounded: default
+ *
+ */
+function modChrome_AccessibleNoShadows( $module, &$params, &$attribs ) {
+    $attribs['shadows'] = 'false';
+    modChrome_Accessible( $module, $params, $attribs );
+}
+
+
+/**
+ * Adds a moduletable div
+ *
+ * shadows: false
+ * rounded: false
+ *
+ */
+function modChrome_AccessibleNoRoundedNoShadows( $module, &$params, &$attribs ) {
+    $attribs['rounded'] = 'false';
+    modChrome_AccessibleNoShadows( $module, $params, $attribs );
+}
+
+
+
 
 ?>

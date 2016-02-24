@@ -34,10 +34,19 @@ if(!defined('__FAP_UTILS__')) {
 
 
     /**
+     * Create the placeholder-like attributes and JS code for input
+     * elements
+     *
+     */
+    function fap_placeholder($text){
+        return 'value="' . $text . '"  onblur="if (this.value==\'\'){ jQuery(this).addClass(\'placeholder\'); this.value=\'' . $text . '\';}" onfocus="if(this.value==\'' . $text . '\'){ jQuery(this).removeClass(\'placeholder\'); this.value=\'\';}"';
+    }
+
+    /**
      * Fix filter: remove onchange and add submit
      */
     function fap_fix_filter($html){
-        return str_replace('onchange="this.form.submit()"', '', $html) . '<button type="submit">' . JText::_('FAP_FORM_SUBMIT'). '</button>';
+        return str_replace('onchange="this.form.submit()"', '', $html) . '<button type="submit" class="btn">' . JText::_('FAP_FORM_SUBMIT'). '</button>';
     }
 
 

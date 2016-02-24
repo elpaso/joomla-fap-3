@@ -36,8 +36,14 @@ body {
     margin: 0;
 }
 
-button {
+button, .btn {
     font-size: inherit;
+    font-family: inherit;
+}
+
+a.btn.jmodedit  {
+    min-width: 2em !important;
+    min-height: 2em !important;
 }
 
 h1 {
@@ -102,7 +108,12 @@ ul {
     padding-left: 1.5em;
 }
 
-address,blockquote,form,ul,ol,dl,fieldset,blockquote,label{
+ul.unstyled {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+address,blockquote,form,ul,ol,dl,fieldset,blockquote {
     margin: 0.3em;
 }
 
@@ -130,15 +141,17 @@ address,blockquote,form,ul,ol,dl,fieldset,blockquote,label{
 .control-group > div.controls > input,
 .control-group > div.controls > textarea {
     display:block;
-    width: 95%;
+    width: 94%;
 }
 
-.control-group > div.controls > .inputbox {
-    width: inherit;
+select,
+.inputbox {
+    font-family: inherit;
+    font-size: inherit;
 }
 
 .control-label  {
-    margin-top: 1em;
+    padding-top: 1em;
 }
 
 .control-label label {
@@ -146,10 +159,10 @@ address,blockquote,form,ul,ol,dl,fieldset,blockquote,label{
 
 }
 
-.controls input[type="text"],
-.controls input[type="email"],
-.controls input[type="password"],
-.form-control {
+input[type="text"],
+input[type="email"],
+input[type="password"]
+{
     padding: 0.25em 0.5em;
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
     border: solid 1px #ddd;
@@ -157,13 +170,17 @@ address,blockquote,form,ul,ol,dl,fieldset,blockquote,label{
     font-family: inherit;
     font-size: 100%;
 }
-.controls input[type="text"]:focus,
-.controls input[type="password"]:focus,
-.controls input[type="email"]:focus,
-.form-control:focus {
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
     border-color: #66afe9;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
     outline: 0 none;
+}
+
+input.placeholder {
+    color: #777;
 }
 
 label.block {
@@ -174,18 +191,36 @@ label.block {
 .button, button, .btn {
     cursor: pointer;
     text-decoration: none;
-    padding: 0.25em;
+    padding: 0.25em 0.5em;
+    margin: 0.5em;
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
 }
 
+.btn:hover {
+    text-decoration: none !important;
+}
 
-.moduletable ul.menu
-, .moduletable ul.menu ul
-, .moduletable {
+button::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+	margin-top:0;
+	margin-bottom: 0;
+}
+
+.moduletable ul.menu,
+.moduletable ul.menu ul,
+.moduletable {
     padding: 0;
 }
 
 .moduletable {
     margin-bottom: 1em;
+}
+
+.menu-top .moduletable {
+    margin-bottom: 0;
 }
 
 ul.menu li {
@@ -216,9 +251,7 @@ div.fap-footer  {
 .module-title {
     font-size:110%;
     font-weight:bold;
-/*
     padding:0.5em 0 0.5em 0.5em;
-*/
     margin: 0;
 }
 
@@ -226,6 +259,20 @@ div.fap-footer  {
 
 }
 
+.module-title,
+.module-content {
+    padding: 0.25em 0.5em;
+    overflow: hidden;
+}
+
+div[role="banner"] .module-content {
+    overflow: visible;
+}
+
+.mod_menu .module-content,
+.mod_banners .module-content {
+    padding: 0;
+}
 
 .moduletable p {
     margin-left: 0.5em;
@@ -280,35 +327,45 @@ div.fap-footer  {
     font-style: normal;
 }
 
+
 /* Accessible CSS2 dropdown top menus */
 
 /* Dropdowns */
 
-div#menu-top .menu > li.deeper.parent > a:after {
+div.menu-top .moduletable.mod_menu .menu > li.deeper.parent > a:after {
     content: "\e007";
     font-family: "IcoMoon";
     font-size: small;
     padding-left: 0.5em;
 }
 
-div#menu-top .menu > li > ul {
+/*
+div.menu-top .moduletable.mod_menu .menu li ul {
+    padding: 0;
+    margin: 0;
+}
+*/
+
+div.menu-top .moduletable.mod_menu .menu > li > ul {
     left: -9999px;
     position: absolute;
     height: auto;
-    padding: 0;
+/*
     margin-top: -1px;
+*/
+    margin-left: -1px;
     width: auto;
     z-index: 900;
     border-top: none;
     opacity: 0;
 }
 
-div#menu-top ul.menu ul li {
+div.menu-top .moduletable.mod_menu ul.menu ul li {
     float: none;
     list-style-type: none;
 }
 
-div#menu-top .menu ul a {
+div.menu-top .moduletable.mod_menu .menu ul a {
     display: block;
     margin: 0;
     padding: 0.2em 0.5em;
@@ -316,22 +373,22 @@ div#menu-top .menu ul a {
 }
 
 /* icons in menus */
-div#menu-top .menu a[class^="icon-"],
-div#menu-top .menu a[class*=" icon-"] {
+div.menu-top .moduletable.mod_menu .menu a[class^="icon-"],
+div.menu-top .moduletable.mod_menu .menu a[class*=" icon-"] {
     width: inherit;
     height: inherit;
     line-height: inherit;
 }
 
-div#menu-top .menu a[class^="icon-"]::before,
-div#menu-top .menu a[class*=" icon-"]::before {
+div.menu-top .moduletable.mod_menu .menu a[class^="icon-"]::before,
+div.menu-top .moduletable.mod_menu .menu a[class*=" icon-"]::before {
     padding-right: 0.5em;
 }
 
 /* WAI-ARIA */
-div#menu-top .menu li.parent:hover > ul,
-div#menu-top .menu li.parent[aria-expanded="true"] > ul,
-div#menu-top .menu li.parent a:focus +  ul {
+div.menu-top .moduletable.mod_menu .menu li.parent:hover > ul,
+div.menu-top .moduletable.mod_menu .menu li.parent[aria-expanded="true"] > ul,
+div.menu-top .moduletable.mod_menu .menu li.parent a:focus +  ul {
     left: inherit;
     opacity: 1;
 /*
@@ -339,12 +396,12 @@ div#menu-top .menu li.parent a:focus +  ul {
 */
 }
 
-.transitions div#menu-top .menu li.parent:hover > ul
+.transitions div.menu-top .moduletable.mod_menu .menu li.parent:hover > ul
 {
     transition: opacity 0.5s;
 }
 
-div#menu-top .menu li ul li.parent ul {
+div.menu-top .moduletable.mod_menu .menu li ul li.parent ul {
     border: none;
     display: block;
     position:relative;
@@ -352,36 +409,39 @@ div#menu-top .menu li ul li.parent ul {
 
 
 
-div#menu-top .moduletable {
+div.menu-top .moduletable.mod_menu .moduletable {
     padding-left: 0;
     margin-bottom: 0;
 }
 
 
-div#menu-top .padding, div#footer .padding{
+div#footer .padding{
     padding-top: 0;
     padding-bottom: 0;
 }
 
-div#menu-top a {
+div.menu-top .moduletable.mod_menu a {
     font-weight: bold;
     text-decoration:none;
 }
 
-div#menu-top ul.menu a {
+div.menu-top .moduletable.mod_menu ul.menu li a:hover,
+div.menu-top .moduletable.mod_menu ul.menu li a {
     padding: 0.25em 1em;
-    border: none;
+    border-left: none;
 }
 
 
-div#menu-top ul.menu li {
+div.menu-top .moduletable.mod_menu ul.menu li {
     list-style-type: none;
     float: left;
 }
 
-div#menu-top ul.menu li > a {
-  border-right: none;
+/*
+div.menu-top .moduletable.mod_menu ul.menu li > a {
+   border-right: none;
 }
+*/
 
 /* Footer */
 
@@ -465,6 +525,10 @@ div#accessibility-links button span {
     width: 17px;
 }
 
+#accessibility-links button {
+    margin: 0;
+}
+
 .accessibility-img #increase { background-image: url('../images/textincrease.gif'); }
 .accessibility-img #decrease { background-image: url('../images/textdecrease.gif'); }
 .accessibility-img #reset { background-image: url('../images/textreset.gif'); }
@@ -521,8 +585,8 @@ div.contentpaneopen ul, div.contentpaneopen ul {
 
 
 /** Banner */
-#banner .moduletable {
-    margin-bottom: 4px;
+#banner {
+    margin-bottom: 1em;
 }
 
 #banner a {
@@ -582,9 +646,10 @@ a img {
     vertical-align: middle;
 }
 
-/* FAP added form submit for otherwise unaccessible forms */
-.fap_submit {
-    float: right;
+/* FAP added form submit for otherwise unaccessible forms
+ * align right for buttons! */
+.fap-submit {
+    text-align: right;
 }
 
 /* Content tables */
@@ -626,7 +691,19 @@ div.pagination ul
 div.pagination ul li
 , ul.pagenav li{
     display: inline;
-    padding: 0 0.4em;
+}
+
+div.pagination ul li a
+, ul.pagenav li a{
+    padding: 0 0.5em;
+}
+
+
+/* Set a color for all templates */
+div.pagination ul li.disabled a,
+div.pagination ul li.disabled a:hover {
+    color: gray;
+    background: transparent;
 }
 
 .counter.pull-right {

@@ -268,7 +268,7 @@ function fap_decorate_external_links(){
 
 jQuery(function($){
     fap_prefs_load();
-    fap_accessible_menu( '#menu-top' );
+    fap_accessible_menu( '.menu-top' );
     fap_accessible_menu( '[role=complementary] .nav.menu' );
     fap_decorate_external_links();
 

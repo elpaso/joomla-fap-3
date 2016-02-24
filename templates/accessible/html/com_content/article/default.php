@@ -9,6 +9,9 @@
 // no direct access
 defined('_JEXEC') or die;
 
+
+JHtml::addIncludePath(dirname(__FILE__) .'/../../helpers');
+
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 
 // Create shortcuts to some parameters.
@@ -61,8 +64,8 @@ if (!empty($this->item->pagination) AND $this->item->pagination && !$this->item-
 		<?php endif; ?>
 	<?php else : ?>
 		<?php if ($useDefList) : ?>
-			<div id="pop-print" class="btn hidden-print">
-				<?php echo JHtml::_('icon.print_screen', $this->item, $params); ?>
+			<div id="pop-print" class="hidden-print">
+				<?php echo JHtml::_('fap.print_screen', $this->item, $params); ?>
 			</div>
 		<?php endif; ?>
 <?php endif; ?>
