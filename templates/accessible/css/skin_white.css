@@ -28,6 +28,7 @@
  */
 /* page title */
 /* article title */
+/* dotted 1px #CCC; */
 /* black */
 body.white {
   background: #f2f2f2;
@@ -140,7 +141,7 @@ body.white div.fap-footer a body.white div.fap-footer a:hover {
 */
 body.white .menu a {
   color: #002c74;
-  border-top: dotted 1px #cccccc;
+  border-top: none;
   border-bottom: none;
 }
 body.white .menu li li a,
