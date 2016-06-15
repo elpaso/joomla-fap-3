@@ -84,7 +84,7 @@ $listDirn   = $this->escape($this->state->get('list.direction'));
                                 <?php
                                 // ABP: commented out since there is already the external-link icon
                                 //echo JHtml::_('image', 'system/weblink.png', JText::_('COM_WEBLINKS_LINK'), null, true);
-                                ?><em class="icon-out-2"></em>
+                                ?>
                             <?php else: ?>
                                 <?php echo '<img src="'.$this->params->get('link_icons').'" alt="'.JText::_('COM_WEBLINKS_LINK').'" />'; ?>
                             <?php endif; ?>

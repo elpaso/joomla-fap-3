@@ -13,6 +13,7 @@ defined('_JEXEC') or die;
 require_once dirname(__FILE__) . '/../fap_utils.php';
 $value = JRequest::getString('searchword', '');
 
+$button_text = trim($button_text);
 ?>
 <div class="search<?php echo $moduleclass_sfx ?> fap-search">
 	<form action="<?php echo JRoute::_('index.php');?>" method="post" class="form-inline">
@@ -31,7 +32,7 @@ $value = JRequest::getString('searchword', '');
 				if ($imagebutton) :
 					$btn_output = ' <input type="image" value="' . $button_text . '" class="button" src="' . $img . '" onclick="this.form.searchword.focus();"/>';
 				else :
-					$btn_output = ' <button class="button btn btn-primary" onclick="this.form.searchword.focus();"><span class="icon-search"></span>' . ( $button_text ? ' ' : '') . $button_text . '</button>';
+					$btn_output = ' <button class="button btn btn-primary" onclick="this.form.searchword.focus();"><span class="icon-search"></span>' . ( $button_text ? ' ' : '<span class="hidden">'  .  JText::_('FAP_MOD_SEARCH') . '</span>') . $button_text . '</button>';
 				endif;
 
 				switch ($button_pos) :

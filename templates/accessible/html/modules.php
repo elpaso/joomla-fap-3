@@ -45,8 +45,10 @@ function modChrome_Accessible( $module, &$params, &$attribs ) {
         ?> clearfix">
 		<?php if ($module->showtitle != 0) :
 			$heading_tag = JFactory::getDocument()->params->get('module_heading', 'div');
+            $headerClass   = htmlspecialchars($params->get('header_class', 'module-title'));
+
 		?>
-			<<?php echo $heading_tag ?> class="module-title"><?php echo $module->title; ?></<?php echo $heading_tag ?>>
+			<<?php echo $heading_tag ?> class="<?php echo $headerClass ?>"><?php echo $module->title; ?></<?php echo $heading_tag ?>>
 		<?php endif; ?>
 			<div class="module-content">
 				<?php echo $module->content; ?>

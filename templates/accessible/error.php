@@ -147,6 +147,7 @@ echo '<?xml version="1.0" encoding="'. $this->_charset .'"?' .'>';
     fap_load_theme( $template );
 } ?>
 <link href="<?php echo JURI::base();?>templates/<?php echo $tpl_name; ?>/css/<?php echo fap_css_name(JPATH_THEMES.'/'.$tpl_name.'/css/', 'template_css'); ?>" rel="stylesheet" type="text/css" />
+<link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/<?php echo fap_css_name(JPATH_THEMES.'/'.$this->template.'/css/', 'icomoon_valid'); ?>" rel="stylesheet" type="text/css" />
 <?php
     /* loads the additional custom theme if set */
     if ($params->get('custom_theme') && $css_name = fap_css_name(JPATH_THEMES.'/'.$tpl_name.'/css/', $params->get('custom_theme'))) { ?>

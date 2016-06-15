@@ -15,6 +15,7 @@
 /* menu header has bottom border only: light theme */
 /* border for submenu */
 /* Rounded corners in module headers */
+/* ignored if previous is false */
 /* def.: 76% */
 /***********************************************************************
 /* Derived colors
@@ -35,6 +36,7 @@ body.white {
 }
 body.white .label.label-info {
   background-color: #f2f2f2;
+  white-space: nowrap;
 }
 body.white .label.label-info:hover {
   background-color: #002c74;
@@ -529,6 +531,9 @@ body.white .badge {
   vertical-align: middle;
   white-space: nowrap;
 }
+body.white .badge.pull-right {
+  margin-top: 0.5em;
+}
 /* Rounded */
 body.white.rounded .btn,
 body.white.rounded .button,
@@ -540,15 +545,19 @@ body.white.rounded .center-module-highlight {
   border-radius: 4px;
 }
 /* Rounded full */
+/*
 body.white.rounded .rounded,
+*/
 body.white.rounded .moduletable.rounded .flexslider,
 body.white.rounded .moduletable.rounded .flexslider > .slides img,
 body.white.rounded .moduletable.rounded .flex-viewport {
   border-radius: 4px;
+  overflow: auto;
 }
 /* Fix for loader */
 body.white.rounded .flexslider.loader {
   border-radius: 50% !important;
+  overflow: hidden !important;
 }
 /* rounded bottom submenu */
 body.white.rounded div.menu-top .nav-child.level-1 {

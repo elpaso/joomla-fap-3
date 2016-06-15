@@ -18,6 +18,7 @@ var prefs_loaded = false;
 var fs_current   = fs_default;
 var skin_current = skin_default || '';
 
+
 /**
  * On ENTER
  */
@@ -256,7 +257,7 @@ function fap_decorate_external_links(){
         if(!$e.children().length){
             // Set in index.php HEAD
             var title = fap_text_external_link;
-            $e.prepend('<em class="icon-out-2"></em>');
+            $e.append(' <em class="icon-out-2"></em>');
             if ( $e.attr('title') ){
                 $e.attr('title', $e.attr('title') +  ' - ' + title);
             } else {

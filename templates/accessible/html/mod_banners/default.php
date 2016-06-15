@@ -18,20 +18,19 @@ $baseurl = JUri::base();
 <?php
 
 $_doc = JFactory::getDocument();
-$_template_params = $_doc->params;
+$_template_params = JFactory::getApplication()->getTemplate(true)->params;
+$_template_name = JFactory::getApplication()->getTemplate();
 
+// This is the flexslider banner for jspro only
 if ($_template_params->get('banner_slideshow_enabled', 'no') == 'yes') {
 
-    $_template_name = $_doc->template;
+    JHtml::_('jquery.framework');
+
     $_doc->addScript( $baseurl . 'templates/'. $_template_name
         . '/jspro/flexslider/jquery.flexslider'
         . (JDEBUG ? '' : '-min') . '.js' );
 
-    $_style_url = $baseurl . 'templates/'
-        . $_template_name. '/jspro/flexslider/'
-        . fap_css_name(JPATH_THEMES.'/'
-        . $_template_name
-        . '/jspro/flexslider/', 'flexslider');
+    $_style_url = $baseurl . 'templates/'. $_template_name. '/jspro/flexslider/flexslider.css';
 
     $_doc->addStyleSheet( $_style_url );
 

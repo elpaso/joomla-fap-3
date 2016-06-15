@@ -15,6 +15,7 @@
 /* menu header has bottom border only: light theme */
 /* border for submenu */
 /* Rounded corners in module headers */
+/* ignored if previous is false */
 /* def.: 76% */
 /***********************************************************************
 /* Derived colors
@@ -210,4 +211,7 @@ body.black .badge {
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
+}
+body.black div.menu-top-bg {
+  box-shadow: 0 3px 10px 6px rgba(255, 255, 255, 0.3);
 }

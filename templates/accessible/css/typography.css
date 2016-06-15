@@ -20,6 +20,11 @@
     margin-left: 0;
     text-align: left;
     vertical-align: middle;
+    padding: 0;
+}
+
+.list-striped li {
+    padding: 0 1em;
 }
 
 .clearfix:before,
@@ -117,6 +122,13 @@ address,blockquote,form,ul,ol,dl,fieldset,blockquote {
     margin: 0.3em;
 }
 
+table.unstyled,
+table.unstyled tr,
+table.unstyled td,
+table.unstyled th {
+    border: none;
+}
+
 /* J3: formelm (deprecated: will be removed in next FAP releases)*/
 
 .formelm input,
@@ -180,7 +192,7 @@ input[type="email"]:focus {
 }
 
 input.placeholder {
-    color: #777;
+    color: #555;
 }
 
 label.block {
@@ -710,6 +722,14 @@ div.pagination ul li.disabled a:hover {
     float: none;
     margin: 0.5em;
 }
+
+
+img.pull-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 hr.clear {
     clear:both;

@@ -131,7 +131,7 @@ div.menu-top {
 }
 
 
-.headroom--not-top div.menu-top{
+.headroom--not-top div.menu-top {
     position: fixed;
     top: 0;
     z-index: 99999;

@@ -72,7 +72,7 @@ if ( $format != 'raw' ) {
 	}
 
 $html .= "<div class=\"attachmentsCaption\">{$this->title}</div>\n";
-$html .= "<ul class=\"attachmentsList unstyled\">\n";
+$html .= "<ul class=\"unstyled\">\n";
 
 // Construct the lines for the attachments
 $row_num = 0;
@@ -187,7 +187,7 @@ for ($i=0, $n=count($attachments); $i < $n; $i++) {
 				}
 			}
 		$html .= "</a>";
-		$html .= "<a class=\"at_url\" href=\"$url\"$target title=\"$tooltip\">$filename</a>";
+		$html .= "<a class=\"fap_at_url\" href=\"$url\"$target title=\"$tooltip\">$filename</a>";
 		}
 	else {
 		$tooltip = JText::sprintf('ATTACH_DOWNLOAD_THIS_FILE_S', $actual_filename);
@@ -281,7 +281,7 @@ for ($i=0, $n=count($attachments); $i < $n; $i++) {
 		// Create the edit link
 		$update_url = str_replace('%d', (string)$attachment->id, $this->update_url);
 		$tooltip = JText::_('ATTACH_UPDATE_THIS_FILE') . ' (' . $actual_filename . ')';
-		$update_link = '<a class="modal-button" type="button" href="' . $update_url . '"';
+		$update_link = '<a class="modal-button modal" type="button" href="' . $update_url . '"';
 		$update_link .= " rel=\"{handler: 'iframe', size: {x: 920, y: 600}}\" title=\"$tooltip\">";
 		$update_link .= JHtml::image('com_attachments/pencil.gif', $tooltip, null, true);
 		$update_link .= "</a>";
@@ -292,7 +292,7 @@ for ($i=0, $n=count($attachments); $i < $n; $i++) {
 		// Create the delete link
 		$delete_url = str_replace('%d', (string)$attachment->id, $this->delete_url);
 		$tooltip = JText::_('ATTACH_DELETE_THIS_FILE') . ' (' . $actual_filename . ')';
-		$delete_link = '<a class="modal-button" type="button" href="' . $delete_url . '"';
+		$delete_link = '<a class="modal-button modal" type="button" href="' . $delete_url . '"';
 		$delete_link .= " rel=\"{handler: 'iframe', size: {x: 600, y: 400}, iframeOptions: {scrolling: 'no'}}\" title=\"$tooltip\">";
 		$delete_link .= JHtml::image('com_attachments/delete.gif', $tooltip, null, true);
 		$delete_link .= "</a>";

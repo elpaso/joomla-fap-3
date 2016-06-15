@@ -104,7 +104,7 @@ class  plgSystemJFap extends JPlugin
             $string = array();
             $replace = array();
             foreach($matches[0] as $k => $m){
-                if (strpos(JURI::root(), $matches[1][$k]) === false ){
+                if (strpos($matches[1][$k], JURI::root()) === false ){
                     $string[] = $m;
                     if(! strstr ( $m, 'class=') ){
                         $replace[] = substr($m, 0, -1) . ' class="external-link">';
