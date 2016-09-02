@@ -2,12 +2,12 @@
 <extension version="3.1" type="plugin" group="system" method="upgrade">
     <name>jFap</name>
     <author>Alessandro Pasotti - ItOpen</author>
-    <creationDate>2016-05-05</creationDate>
+    <creationDate>2016-09-02</creationDate>
     <copyright>Copyright (C) 2010-2015 ItOpen. All rights reserved.</copyright>
     <license>http://www.gnu.org/licenses/gpl.txt GNU/GPL</license>
     <authorEmail>info@itopen.it</authorEmail>
     <authorUrl>www.itopen.org</authorUrl>
-    <version>3.26</version>
+    <version>3.27</version>
     <description>This FAP plugin fixes some common accessibility problems.</description>
     <files>
         <filename plugin="jfap">jfap.php</filename>
@@ -17,4 +17,14 @@
         <server type="extension" priority="1" name="Server Aggiornamenti ItOpen">http://www.itopen.it/joomla-updater?o=plg_jfap_system</server>
     </updateservers>
 
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field type="list" name="rewrite_external_links" label="Aggiungi icona ai link esterni" description="Aggiunge un'icona ai link esterni, potrebbe interferire con i link esterni generati da altri moduli o componenti, disattivate questa funzionalità in caso di problemi" default="yes">
+                    <option value="yes">JYES</option>
+                    <option value="no">JNO</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
 </extension>

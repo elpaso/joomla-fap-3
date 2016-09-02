@@ -98,22 +98,24 @@ class  plgSystemJFap extends JPlugin
         # Now done in onBeforeCompileHead
         #$body = preg_replace('#<script type="text/javascript">(((?!CDATA).)*?)</script>#ms', "<script type=\"text/javascript\">\n/*<![CDATA[*/\n\\1\n/*]]>*/\n</script>", $body);
 
-        // Set external link class
-        if (preg_match_all( "/<a[^>]*?href=[\"'](http[s]*:\/\/[^\"']+)[\"'][^>]*>/" , $body , $matches)){
-            //vardie($matches);
-            $string = array();
-            $replace = array();
-            foreach($matches[0] as $k => $m){
-                if (strpos($matches[1][$k], JURI::root()) === false ){
-                    $string[] = $m;
-                    if(! strstr ( $m, 'class=') ){
-                        $replace[] = substr($m, 0, -1) . ' class="external-link">';
-                    } else {
-                        $replace[] = preg_replace("/class=[\"'](.*?)[\"']/", 'class="\1 external-link"', $m);
+        // Set external link class if enabled
+        if ($this->params->get('rewrite_external_links') != 'no') {
+            if (preg_match_all( "/<a[^>]*?href=[\"'](http[s]*:\/\/[^\"']+)[\"'][^>]*>/" , $body , $matches)){
+                //vardie($matches);
+                $string = array();
+                $replace = array();
+                foreach($matches[0] as $k => $m){
+                    if (strpos($matches[1][$k], JURI::root()) === false ){
+                        $string[] = $m;
+                        if(! strstr ( $m, 'class=') ){
+                            $replace[] = substr($m, 0, -1) . ' class="external-link">';
+                        } else {
+                            $replace[] = preg_replace("/class=[\"'](.*?)[\"']/", 'class="\1 external-link"', $m);
+                        }
                     }
                 }
+                $body = str_replace($string, $replace, $body);
             }
-            $body = str_replace($string, $replace, $body);
         }
 
         JResponse::setBody($body);

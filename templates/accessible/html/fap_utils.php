@@ -346,6 +346,7 @@ if(!defined('__FAP_UTILS__')) {
         }
 
     }
+
     define('__FAP_UTILS__', 1);
 
 }
