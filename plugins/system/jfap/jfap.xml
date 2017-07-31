@@ -14,7 +14,7 @@
     </files>
 
     <updateservers>
-        <server type="extension" priority="1" name="Server Aggiornamenti ItOpen">http://www.itopen.it/joomla-updater?o=plg_jfap_system</server>
+        <server type="extension" priority="1" name="Server Aggiornamenti ItOpen">https://www.itopen.it/joomla-updater?o=plg_jfap_system</server>
     </updateservers>
 
     <config>

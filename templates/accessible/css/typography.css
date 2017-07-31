@@ -1021,6 +1021,12 @@ text-decoration:none
 
 /* ABP: more BS pieces for tooltips */
 
+/* override general.css */
+div.tooltip {
+    background: none;
+    border: none;
+}
+
 .tooltip {
     display: block;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -1283,5 +1289,3 @@ dl.albopretorio dd {
 table.albopretorio {
     width: 100%;
 }
-
-

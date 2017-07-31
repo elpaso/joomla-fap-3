@@ -51,7 +51,7 @@ if (!function_exists('show_slider_text')){
                         if ($show_text) : ?>
                            <p class="slide-caption"><?php echo $item->name; ?></p>
                             <?php if ($item->description): ?>
-                            <p class="slide-caption-desc"><?php echo $item->description; ?></p>
+                            <p class="slide-caption-desc"><?php echo str_replace( array('<p>', '</p>'), '', $item->description); ?></p>
                             <?php endif;
                         endif;
     }
@@ -108,7 +108,7 @@ if (!function_exists('show_slider_text')){
                     <?php // Open in parent window?>
                     <a
                         href="<?php echo $link;?>"
-                        title="<?php echo htmlspecialchars($item->name, ENT_QUOTES, 'UTF-8');?>"
+                        title="<?php echo htmlspecialchars($item->name, ENT_QUOTES, 'UTF-8');?>">
                         <img
                             src="<?php echo $baseurl . $imageurl;?>"
                             alt="<?php echo $alt;?>"
@@ -128,7 +128,7 @@ if (!function_exists('show_slider_text')){
                     <?php if (!empty($width)) echo 'width ="' . $width . '"';?>
                     <?php if (!empty($height)) echo 'height ="' . $height . '"';?>
                 />
-                    <?php show_slider_text($item, $show_text); ?>
+                <?php show_slider_text($item, $show_text); ?>
             <?php endif;?>
         </div>
         <?php else: // not an image ?>

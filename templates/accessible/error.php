@@ -24,7 +24,9 @@
 
 defined( '_JEXEC' ) or die( 'Restricted access' );
 # Disable LESS if set:
+if (! defined('LESS_IS_MORE') ){
 define ('LESS_IS_MORE', '1');
+}
 #define ('LESS_COLORS', 'colors_BlueBeige.less');
 
 
@@ -49,8 +51,10 @@ if($params->get('new_positions') == 'yes'){
     $new_positions = true;
     require_once(JPATH_THEMES.'/'.$tpl_name.'/aliases.php');
 } else {
-    function get_accessible_pos($pos){
-        return $pos;
+    if(!function_exists('get_accessible_pos')){
+        function get_accessible_pos($pos){
+            return $pos;
+        }
     }
     $new_positions = false;
 }

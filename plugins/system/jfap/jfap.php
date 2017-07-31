@@ -79,13 +79,15 @@ class  plgSystemJFap extends JPlugin
         $dc_desc_regexp = '#<meta name="description"#';
         $dc_desc_replace = '<meta name="DC.Description"';
         $body = preg_replace(
-					array($dc_desc_regexp,
+					array(
+					    // $dc_desc_regexp,
 						//'/target=[\'"](_blank|_new)+/',
 						$style_regexp,
 						'/(<meta name="generator" content=")([^"]+)"/',
 						$img_regexp
 						),
-					 array($dc_desc_replace,
+					 array(
+					    //$dc_desc_replace,
 						//'onclick="window.open(this.href);return false;" onkeypress="handle_keypress(event, function(evt){ window.open(this.href); });return false;',
 						$style_replace,
 						'\1\2 - Versione FAP"',
@@ -116,6 +118,12 @@ class  plgSystemJFap extends JPlugin
                 }
                 $body = str_replace($string, $replace, $body);
             }
+        }
+
+        // Fix class attribute in script tags
+        if (preg_match_all('#<script type="application/json" class="joomla-script-options new">([^<]+)</script>#', $body, $matches)){
+            $body = str_replace($matches[0][0], '', $body);
+            $body = preg_replace('#<body[^>]*>#', '$1<div style="display:none" class="joomla-script-options new">' . $matches[1][0] . '</div>', $body);
         }
 
         JResponse::setBody($body);
