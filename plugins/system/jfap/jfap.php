@@ -123,7 +123,10 @@ class  plgSystemJFap extends JPlugin
         // Fix class attribute in script tags
         if (preg_match_all('#<script type="application/json" class="joomla-script-options new">([^<]+)</script>#', $body, $matches)){
             $body = str_replace($matches[0][0], '', $body);
-            $body = preg_replace('#<body[^>]*>#', '$1<div style="display:none" class="joomla-script-options new">' . $matches[1][0] . '</div>', $body);
+            if( JRequest::getVar('layout') != 'edit')
+			{
+            	$body = preg_replace('/(<body[^>]*>)/', '$1<div style="display:none" class="joomla-script-options new">' . $matches[1][0] . '</div>', $body);
+            }
         }
 
         JResponse::setBody($body);
