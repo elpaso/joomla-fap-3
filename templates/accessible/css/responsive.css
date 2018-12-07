@@ -179,10 +179,10 @@ body.fap-small span.accessibility-label {
 body.fap-small .slicknav_menu_wrapper .fap-search {
   margin: 0;
   padding: 5px;
-  background-color: #002c74;
+  background-color: #002C74;
 }
 body.fap-small .slicknav_menu_wrapper .fap-search form {
-  background-color: #ffffff;
+  background-color: #FFF;
   padding: 0.5em;
   margin: 0;
 }
@@ -213,7 +213,7 @@ body.fap-small div#accessibility-links {
 }
 body.fap-small div#accessibility-links button {
   background-color: #003fa7;
-  color: #ffffff;
+  color: #FFF;
   /*
     border-radius: 4px;
 */
@@ -343,17 +343,17 @@ body.fap-small a.slicknav_btn {
   text-decoration: none;
 }
 .slicknav_menu .slicknav_menutxt {
-  color: #ffffff;
+  color: #FFF;
   font-weight: bold;
   /*
     text-shadow: 0 1px 3px #000;
 */
 }
 .slicknav_menu .slicknav_icon-bar {
-  background-color: #ffffff;
+  background-color: #FFF;
 }
 .slicknav_nav {
-  background: #ffffff;
+  background: #FFF;
   /*
     font-size: 0.875em;
 */
@@ -378,7 +378,7 @@ body.fap-small a.slicknav_btn {
 */
 }
 .slicknav_nav a {
-  color: #f2f2f2;
+  color: #F2F2F2;
   margin: 2px 5px;
   padding: 5px 10px;
   text-decoration: none;
@@ -403,7 +403,7 @@ body.fap-small a.slicknav_btn {
   padding: 0;
 }
 .slicknav_menu {
-  background: none repeat scroll 0 0 #002c74;
+  background: none repeat scroll 0 0 #002C74;
   padding: 5px;
 }
 /*
@@ -433,7 +433,7 @@ body.fap-small ul.nav.menu a:hover > a,
 body.fap-small ul.nav.menu a:focus,
 body.fap-small ul.nav.menu a:hover {
   background: none repeat scroll 0 0 #dae8ff;
-  color: #002c74;
+  color: #002C74;
   border-left: none;
 }
 /** SlickNav black - fixed colors for all themes *********************/
@@ -441,12 +441,12 @@ body.black.fap-small a.slicknav_btn:focus,
 body.black.fap-small a.slicknav_btn:active,
 body.black.fap-small a.slicknav_btn,
 body.black div#accessibility-links button {
-  background-color: #002c81;
-  color: #ffff00;
-  border: solid 1px #ffffff;
+  background-color: #002C81;
+  color: yellow;
+  border: solid 1px #fff;
 }
 body.black .slicknav_menu {
-  background: none repeat scroll 0 0 #1e2031;
+  background: none repeat scroll 0 0 #1E2031;
   padding: 5px;
 }
 body.black.fap-small div#accessibility-links button:focus,
@@ -455,22 +455,22 @@ body.black.fap-small .slicknav_nav a:hover,
 body.black.fap-small .slicknav_nav .slicknav_row:hover,
 body.black.fap-small a.slicknav_btn:hover {
   background-color: #003db4;
-  color: #ffff00;
+  color: yellow;
 }
 body.black.fap-small .slicknav_menu .slicknav_icon-bar {
-  background-color: #ffff00;
+  background-color: yellow;
 }
 body.black.fap-small .slicknav_menu .slicknav_menutxt {
-  color: #ffff00;
+  color: yellow;
 }
 body.black.fap-small .slicknav_nav {
-  background: #002c81;
+  background: #002C81;
 }
 body.black.fap-small .slicknav_menu_wrapper .fap-search {
-  background-color: #1e2031;
+  background-color: #1E2031;
 }
 body.black.fap-small .slicknav_menu_wrapper .fap-search form {
-  background-color: #002c81;
+  background-color: #002C81;
 }
 body.fap-small div#accessibility-links .accessibility-icon {
   background: transparent;

@@ -32,28 +32,28 @@
 /* dotted 1px #CCC; */
 /* black */
 body.white {
-  background: #f2f2f2;
+  background: #F2F2F2;
 }
 body.white .label.label-info {
-  background-color: #f2f2f2;
+  background-color: #F2F2F2;
   white-space: nowrap;
 }
 body.white .label.label-info:hover {
-  background-color: #002c74;
+  background-color: #002C74;
 }
 body.white a {
   /* AAA
     text-decoration: none;
     border-bottom: dotted 1px @links;
     */
-  color: #002c74;
+  color: #002C74;
   background-color: transparent;
 }
 body.white a:hover,
 body.white a:focus,
 body.white a:active {
-  background-color: #002c74;
-  color: #ffffff;
+  background-color: #002C74;
+  color: #FFF;
   text-decoration: underline;
 }
 body.white.transitions a:hover,
@@ -68,8 +68,8 @@ body.white a.chzn-single:hover {
 }
 body.white a:focus,
 body.white a:active {
-  background-color: #002c74;
-  color: #ffffff;
+  background-color: #002C74;
+  color: #FFF;
 }
 body.white.transitions a:focus,
 body.white.transitions a:active {
@@ -78,19 +78,19 @@ body.white.transitions a:active {
 body.white h1,
 body.white h2,
 body.white h3 {
-  color: #002c74;
+  color: #002C74;
 }
 body.white h1 a,
 body.white h2 a,
 body.white h3 a {
   text-decoration: none;
-  color: #990033;
+  color: #903;
 }
 body.white h1 a:hover,
 body.white h2 a:hover,
 body.white h3 a:hover {
   color: #ff0055;
-  background-color: #ffffff;
+  background-color: #FFF;
 }
 body.white.transitions h1 a:hover,
 body.white.transitions h2 a:hover,
@@ -100,8 +100,8 @@ body.white.transitions h3 a:hover {
 body.white h1.item-title,
 body.white h2.item-title,
 body.white h3.item-title {
-  color: #990033;
-  border-bottom: solid 1px #990033;
+  color: #903;
+  border-bottom: solid 1px #903;
 }
 body.white h1 {
   border-bottom: solid 1px transparent;
@@ -110,11 +110,11 @@ body.white div.items-row {
   border-top: solid 1px transparent;
 }
 body.white div.random-image {
-  background-color: #cccccc;
+  background-color: #CCC;
 }
 /** Block styles */
 body.white div#wrapper {
-  background: #ffffff;
+  background: white;
   /* NO BORDER
     border: solid 2px @wrapper_border;
 */
@@ -122,27 +122,27 @@ body.white div#wrapper {
   /* CSS 3 :-( */
 }
 body.white .moduletable .module-title {
-  color: #ffffff;
-  background-color: #002c74;
+  color: #FFF;
+  background-color: #002C74;
   padding: 0.5em 0 0.5em 0.5em;
 }
 body.white div#footer .moduletable {
   border: none;
 }
 body.white div#footer .padding {
-  color: #000000;
-  background-color: #f2f2f2;
-  border: solid 1px #efefef;
+  color: #000;
+  background-color: #F2F2F2;
+  border: solid 1px #EFEFEF;
 }
 body.white div.fap-footer,
 body.white div.fap-footer a body.white div.fap-footer a:hover {
-  color: #000000;
+  color: #000;
 }
 /***************************************
  Menus
 */
 body.white .menu a {
-  color: #002c74;
+  color: #002C74;
   border-top: none;
   border-bottom: none;
 }
@@ -172,7 +172,7 @@ body.white .menu li.current > a:focus,
 body.white .menu li.current > a:hover,
 body.white .menu li.current > a:active {
   background-color: #dae8ff;
-  color: #002c74;
+  color: #002C74;
   text-decoration: none;
 }
 /* custom theme menu */
@@ -194,11 +194,11 @@ body.white div.menu-top .menu a {
   /*
     background-color: @menu_top_bg;
 */
-  color: #ffffff;
+  color: #FFF;
 }
 body.white div.menu-top-bg {
-  background-color: #002c74;
-  color: #ffffff;
+  background-color: #002C74;
+  color: #FFF;
   box-shadow: 0 3px 10px 6px rgba(0, 0, 0, 0.3);
 }
 body.white div#logo a:focus,
@@ -207,8 +207,8 @@ body.white div#logo a:hover {
   background: none;
 }
 body.white div.menu-top .mod_menu {
-  background-color: #002c74;
-  color: #ffffff;
+  background-color: #002C74;
+  color: #FFF;
 }
 /* top menu and banner are always rounded top and bottom */
 body.white.rounded .moduletable.rounded.mod_banners,
@@ -219,13 +219,13 @@ body.white.rounded div.menu-top .moduletable.rounded.mod_menu {
 body.white div.menu-top .menu li.current a:hover,
 body.white div.menu-top .menu a:hover,
 body.white div.menu-top .menu a:focus {
-  background-color: #ffffff;
-  color: #002c74;
+  background-color: #FFF;
+  color: #002C74;
 }
 /* Highlight module */
 body.white .center-module-highlight {
   background-color: #ffffff;
-  border: solid 1px #002c74;
+  border: solid 1px #002C74;
   margin: 0.5em;
   /* must match that of .padding in typography.css */
 }
@@ -242,7 +242,7 @@ body.white .center-module-highlight .module-title {
   margin: 0.5em 0;
   background-image: none;
   background-color: inherit;
-  color: #990033;
+  color: #903;
 }
 /* white specific */
 body.white div.menu-top ul.menu li ul a {
@@ -274,8 +274,8 @@ body.white.headroom--not-top.shadows div.menu-top .shadows {
 body.white div.menu-top .menu li.parent:hover > ul,
 body.white div.menu-top .menu li.parent a:focus + ul,
 body.white div.menu-top .menu li.parent[aria-expanded="true"] ul {
-  color: #ffffff;
-  background-color: #002c74;
+  color: #FFF;
+  background-color: #002C74;
 }
 body.white div.menu-top .menu ul ul li a {
   font-weight: normal;
@@ -283,8 +283,8 @@ body.white div.menu-top .menu ul ul li a {
 }
 body.white div.menu-top .menu ul li a:focus,
 body.white div.menu-top .menu ul li a:hover {
-  background-color: #ffffff;
-  color: #002c74;
+  background-color: #FFF;
+  color: #002C74;
 }
 /* BUG: when focus is in the submenu, display is none
 body.white div.menu-top .menu li.parent:hover > ul,
@@ -294,7 +294,7 @@ body.white div.menu-top .menu li.parent a:focus +  ul {
 */
 /* moduletable menu */
 body.white .moduletable {
-  border: solid 1px #002c74;
+  border: solid 1px #002C74;
 }
 body.white .moduletable > li > a {
   margin: 1px;
@@ -302,27 +302,27 @@ body.white .moduletable > li > a {
 }
 /* Footer */
 body.white div#footer a {
-  color: #002c74;
+  color: #002C74;
   padding: 0.3em 0.5em;
 }
 body.white div#footer a:hover,
 body.white div#footer a:active,
 body.white div#footer a:focus {
-  color: #ffffff;
-  background-color: #002c74;
+  color: #FFF;
+  background-color: #002C74;
 }
 body.white #main a:hover,
 body.white #main a:active,
 body.white #main a:focus {
-  background-color: #002c74;
-  color: #ffffff;
+  background-color: #002C74;
+  color: #FFF;
 }
 body.white div.componentheading {
   color: gray;
   font-weight: bold;
 }
 body.white .readmore a {
-  color: #002c74;
+  color: #002C74;
   /*
     font-weight: bold;
 */
@@ -334,13 +334,13 @@ body.white .readmore a {
   /*
     padding: 0.2em 0 0.2em 0.5em;
 */
-  background-color: #eeeeff;
+  background-color: #EEF;
   text-decoration: none;
 }
 /* CSS 3 :-( */
 body.white .readmore a:after {
-  background-color: #002c74;
-  color: #ffffff;
+  background-color: #002C74;
+  color: white;
   margin-left: 0.3em;
   /*
     padding: 0.2em 0.1em;
@@ -355,7 +355,7 @@ body.white .readmore a:focus,
 body.white .readmore a:hover,
 body.white .readmore a:active,
 body.white a.contentpagetitle:hover {
-  background: #002c74;
+  background: #002C74;
   color: #ffffff;
   text-decoration: none;
 }
@@ -363,9 +363,9 @@ body.white .button,
 body.white .btn,
 body.white .button-search,
 .btn-toolbar .btn {
-  border: solid 1px #ffffff;
-  background-color: #002c74;
-  color: #ffffff;
+  border: solid 1px white;
+  background-color: #002C74;
+  color: white;
 }
 body.white .button:hover,
 body.white .btn:hover,
@@ -379,11 +379,11 @@ body.white .mce-panel button:hover {
   background: inherit;
 }
 body.white .sectiontableentry1 {
-  background: #f2f2f2;
+  background: #F2F2F2;
 }
 body.white div.pagenav {
-  background: #f2f2f2;
-  border: solid 1px #002c74;
+  background: #F2F2F2;
+  border: solid 1px #002C74;
 }
 body.white .editor .button,
 body.white .editor button {
@@ -396,12 +396,12 @@ body.white .highlight {
 }
 body.white .pagination,
 body.white ul.pagenav {
-  background: #f2f2f2 none repeat scroll 0%;
+  background: #F2F2F2 none repeat scroll 0%;
   border-top: none;
   border-bottom: none;
 }
 body.white .alert {
-  background: #f2f2f2 none repeat scroll 0%;
+  background: #F2F2F2 none repeat scroll 0%;
   font-size: 110%;
   font-style: italic;
   padding: 1em;
@@ -415,87 +415,87 @@ body.white .mceWrapper a:hover {
  accessibility links */
 body.white .accessibility-img button,
 body.white .accessibility-img span.accessibility-icon {
-  background-color: #002c74;
-  color: #ffffff;
+  background-color: #002C74;
+  color: #fff;
 }
 body.white span.accessibility-icon button:focus,
 body.white span.accessibility-icon button:hover {
   background-color: #0053da;
 }
 body.white span.accessibility-text {
-  color: #000000;
+  color: #000;
 }
 body.white .accessibility-im button,
 body.white .accessibility-plain button {
-  background-color: #ffffff;
-  border: #cccccc;
-  color: #000000;
+  background-color: #FFF;
+  border: #CCC;
+  color: #000;
   font-weight: bold;
 }
 body.white div#accessibility-links button:focus,
 body.white div#accessibility-links button:hover {
-  color: #ffffff;
-  background-color: #000000;
+  color: #FFF;
+  background-color: #000;
 }
 /* from 1.7 */
 body.white table.weblinks th a,
 body.white table.newsfeeds th a,
 body.white table.category th a,
 body.white table.jlist-table th a {
-  color: #ffffff;
+  color: #FFF;
 }
 body.white table.weblinks th a else,
 body.white table.newsfeeds th a else,
 body.white table.category th a else,
 body.white table.jlist-table th a else {
-  background-color: #002c74;
+  background-color: #002C74;
 }
 body.white table.weblinks th,
 body.white table.newsfeeds th,
 body.white table.category th,
 body.white table.jlist-table th {
-  color: #ffffff;
-  background: none repeat scroll 0 0 #002c74;
+  color: #FFF;
+  background: none repeat scroll 0 0 #002C74;
 }
 body.white tr,
 body.white td {
-  border: 1px solid #dddddd;
+  border: 1px solid #DDDDDD;
 }
 body.white fieldset {
-  border: solid 2px #dddddd;
+  border: solid 2px #DDDDDD;
 }
 body.white .article-info {
-  color: #002c74;
+  color: #002C74;
 }
 body.white .article-info a {
-  color: #002c74;
+  color: #002C74;
 }
 body.white .article-info a:focus,
 body.white .article-info a:hover,
 body.white .article-info a:active {
-  color: #ffffff;
-  background-color: #002c74;
+  color: #FFF;
+  background-color: #002C74;
 }
 body.white .star {
   color: red;
 }
 body.white .panel h3.pane-toggler a {
-  background-color: #f5f5f5;
-  border-bottom: 1px solid #dddddd;
+  background-color: #F5F5F5;
+  border-bottom: 1px solid #DDDDDD;
 }
 body.white .panel h3.pane-toggler-down a {
-  background-color: #f5f5f5;
-  border-bottom: 1px solid #dddddd;
+  background-color: #F5F5F5;
+  border-bottom: 1px solid #DDDDDD;
 }
 body.white .panel h3.pane-toggler a:hover,
 body.white .panel h3.pane-toggler-down a:hover,
 body.white .panel h3.pane-toggler a:focus,
 body.white .panel h3.pane-toggler-down a:focus {
-  color: #f5f5f5;
-  background: #002c74;
+  color: #F5F5F5;
+  background: #002C74;
 }
 body.white .cat-list-row1 {
-  background-color: #f2f2f2;
+  background-color: #F2F2F2;
 }
 /* FE article form editing, com_media */
 body.white #main a:hover {
@@ -509,18 +509,18 @@ body.white .thumbnail {
   background-color: white;
 }
 body#component-body.white {
-  background: #ffffff !important;
+  background: white !important;
   margin: 1em;
 }
 /* Fix for background-color:  ignored! */
 body#component-body.white .thumbnail a:focus,
 body#component-body.white .thumbnail a:hover,
 body#component-body.white .thumbnail a:active {
-  color: #002c74;
+  color: #002C74;
   text-decoration: underline;
 }
 body#component-body.white iframe#imageframe {
-  border: 1px solid #002c74;
+  border: 1px solid #002C74;
   margin: 1em 0;
 }
 /* Bootstrap */

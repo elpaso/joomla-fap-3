@@ -59,6 +59,10 @@ h2 {
     font-size: 190%;
 }
 
+h2.item-title {
+    font-size: 120%;
+}
+
 h3 {
     font-size: 170%;
 }
@@ -143,8 +147,8 @@ table.unstyled th {
 
 .formelm label {
     float: left;
-    display: inline-block;
     min-width: 9em;
+    padding-right: 0.5em;
 }
 
 /* J3 Forms */
@@ -1021,12 +1025,6 @@ text-decoration:none
 
 /* ABP: more BS pieces for tooltips */
 
-/* override general.css */
-div.tooltip {
-    background: none;
-    border: none;
-}
-
 .tooltip {
     display: block;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -1288,4 +1286,11 @@ dl.albopretorio dd {
 }
 table.albopretorio {
     width: 100%;
+}
+
+.calendar-container table {
+    width: 100%;
+}
+.calendar-container table tbody td.today{
+    width: inherit;
 }

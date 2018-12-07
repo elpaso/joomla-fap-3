@@ -34,7 +34,7 @@ function get_image_from_article($id){
 
 ?>
 
-<ul class="unstyled category-module<?php echo $moduleclass_sfx; ?>">
+<ul class="unstyled mod-articles-category-thumbnail category-module<?php echo $moduleclass_sfx; ?>">
     <?php if ($grouped) : ?>
         <?php foreach ($list as $group_name => $group) : ?>
         <li>
